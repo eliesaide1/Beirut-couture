@@ -30,6 +30,18 @@
          gets a landscape cut squeezed into it. Width alone misses tablets. */
       var portrait = window.matchMedia('(orientation: portrait)');
 
+      var start = function () {
+        var go = reel.play();
+        if (go && go.catch) go.catch(function () { /* autoplay refused — poster stands */ });
+        reel.classList.add('is-playing');
+      };
+
+      /* Listeners FIRST. A cached file can reach canplay before the next
+         statement runs, and a listener attached afterwards would never hear
+         it — the film would sit invisible behind the poster for good. */
+      reel.addEventListener('canplay', start);
+      reel.addEventListener('loadeddata', start);
+
       var pick = function () {
         var want = portrait.matches ? reel.dataset.srcSmall : reel.dataset.src;
         if (reel.getAttribute('src') === want) return;
@@ -39,14 +51,11 @@
 
       pick();
 
+      /* And if it was ready before any of that, nothing will fire. Start it. */
+      if (reel.readyState >= 2) start();
+
       if (portrait.addEventListener) portrait.addEventListener('change', pick);
       else if (portrait.addListener) portrait.addListener(pick);
-
-      reel.addEventListener('canplay', function () {
-        var go = reel.play();
-        if (go && go.catch) go.catch(function () { /* autoplay refused — poster stands */ });
-        reel.classList.add('is-playing');
-      });
 
       /* Stop decoding while the reel is off screen. */
       if ('IntersectionObserver' in window) {
