@@ -30,7 +30,7 @@
   "@type": "ClothingStore",
   "name": "Beirut Couture",
   "url": "https://www.beirutcouture.com/",
-  "image": "https://www.beirutcouture.com/assets/img/hero.jpg",
+  "image": "https://www.beirutcouture.com/assets/img/og-card.jpg",
   "description": "A Lebanese maison where couture, prêt-à-porter and fine jewelry converge.",
   "address": { "@type": "PostalAddress", "addressLocality": "Beirut", "addressCountry": "LB" },
   "sameAs": ["https://www.instagram.com/beirut_couture/"],
@@ -42,7 +42,7 @@
 <body>
 <a class="skip label" href="#main">Skip to content</a>
 
-<header class="header">
+<header class="header header--overlay">
   <div class="shell header__inner">
     <nav class="nav label" aria-label="Primary">
       <a href="services.html">Services</a>
@@ -74,26 +74,27 @@
 
   <!-- Hero -->
   <section class="hero">
-    <div class="hero__text">
-      <p class="label label--faint">Maison de Couture &middot; Beirut</p>
-      <h1 class="hero__title">Beirut<br><span class="italic">Couture</span></h1>
-      <p class="hero__tagline lede">Where Lebanese couture, pr&ecirc;t-&agrave;-porter and fine jewelry converge.</p>
-
-      <a class="hero__scroll label label--faint" href="#statement">
-        <span></span>
-        Discover
-      </a>
-    </div>
-
     <div class="hero__media">
-      <img src="assets/img/hero.jpg" alt="Lilac gown with a hand-embroidered sunburst, photographed in a Beirut heritage doorway" width="970" height="1280" fetchpriority="high">
+      <img src="assets/img/hero-poster.jpg" alt="Lilac gown with a hand-embroidered sunburst, photographed in a Beirut heritage doorway" width="1920" height="1080" fetchpriority="high">
       <video class="hero__video"
              data-hero-reel
              data-src="assets/video/hero.mp4"
              data-src-small="assets/video/hero-720.mp4"
-             poster="assets/img/hero.jpg"
+             poster="assets/img/hero-poster.jpg"
              muted loop playsinline preload="none"
              aria-hidden="true" tabindex="-1"></video>
+    </div>
+    <div class="hero__scrim"></div>
+
+    <div class="shell hero__body">
+      <p class="label">Maison de Couture &middot; Beirut</p>
+      <h1 class="hero__title">Beirut<br><span class="italic">Couture</span></h1>
+      <p class="hero__tagline lede">Where Lebanese couture, pr&ecirc;t-&agrave;-porter and fine jewelry converge.</p>
+
+      <a class="hero__scroll label" href="#statement">
+        <span></span>
+        Discover
+      </a>
     </div>
   </section>
 

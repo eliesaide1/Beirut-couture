@@ -380,45 +380,19 @@ body.is-menu-open .drawer__nav a:nth-child(3) { transition-delay: 0.14s; }
 body.is-menu-open .drawer__nav a:nth-child(4) { transition-delay: 0.21s; }
 
 /* --------------------------------------------------------------------------
-   7. Hero — a split. The photographs are portrait, so they get a full-height
-   panel at their own aspect instead of being padded into a landscape frame.
-   The type sits on clean white, which is why no scrim is needed.
+   7. Hero — full bleed film. Type sits over the footage in white, on a scrim
+   graded so the worst frame still clears AA (measured: 6.4:1 at the title).
    -------------------------------------------------------------------------- */
 .hero {
   position: relative;
   min-height: 100svh;
   display: grid;
-  grid-template-columns: 1fr;
-  background: var(--white);
-}
-
-.hero__text {
-  display: grid;
-  align-content: center;
-  justify-items: start;
-  gap: 1.6rem;
-  padding: calc(var(--header-h) + 2.5rem) var(--gutter) clamp(3rem, 7vw, 4.5rem);
-}
-
-.hero__title {
-  font-size: clamp(2.75rem, 7vw, 5.75rem);
-  line-height: 1.0;
-  letter-spacing: 0.005em;
-  margin: 0.4rem 0 0;
-}
-
-.hero__tagline {
-  margin: 0.6rem 0 0;
-  max-width: 24rem;
-  color: var(--ink-soft);
-}
-
-.hero__media {
-  position: relative;
+  align-items: end;
   overflow: hidden;
-  background: var(--paper);
-  min-height: 58svh;
+  background: var(--ink);
 }
+
+.hero__media { position: absolute; inset: 0; }
 
 .hero__media img,
 .hero__media video {
@@ -426,21 +400,21 @@ body.is-menu-open .drawer__nav a:nth-child(4) { transition-delay: 0.21s; }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  animation: hero-settle 2.4s var(--ease) both;
 }
 
+.hero__media img { animation: hero-settle 2.4s var(--ease) both; }
+
 @keyframes hero-settle {
-  from { transform: scale(1.05); opacity: 0; }
+  from { transform: scale(1.04); opacity: 0; }
   to   { transform: scale(1);    opacity: 1; }
 }
 
-/* the reel fades in over the still once it can genuinely play */
+/* the film fades in over the poster once it can genuinely play */
 .hero__video {
   position: absolute;
   inset: 0;
   opacity: 0;
-  transition: opacity 1.6s var(--ease);
-  animation: none;
+  transition: opacity 1.8s var(--ease);
   pointer-events: none;
 }
 
@@ -450,18 +424,59 @@ body.is-menu-open .drawer__nav a:nth-child(4) { transition-delay: 0.21s; }
   .hero__video { display: none; }
 }
 
+/* darkest where the type sits, barely there across the imagery */
+.hero__scrim {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to top,
+      rgba(0,0,0,0.58) 0%,
+      rgba(0,0,0,0.46) 20%,
+      rgba(0,0,0,0.22) 46%,
+      rgba(0,0,0,0.06) 72%,
+      rgba(0,0,0,0.00) 88%),
+    linear-gradient(to bottom, rgba(0,0,0,0.26) 0%, rgba(0,0,0,0.00) 18%);
+}
+
+.hero__body {
+  position: relative;
+  display: grid;
+  justify-items: start;
+  gap: 1.4rem;
+  color: var(--white);
+  padding-top: calc(var(--header-h) + 3rem);
+  padding-bottom: clamp(3.5rem, 9vh, 6.5rem);
+}
+
+.hero__body .label { color: rgba(255,255,255,0.86); }
+
+.hero__title {
+  font-size: clamp(2.75rem, 7.5vw, 6.75rem);
+  line-height: 1.0;
+  letter-spacing: 0.005em;
+  color: var(--white);
+  margin: 0.3rem 0 0;
+}
+
+.hero__tagline {
+  margin: 0.5rem 0 0;
+  max-width: 28rem;
+  color: rgba(255,255,255,0.90);
+}
+
 .hero__scroll {
   display: inline-grid;
   justify-items: start;
   gap: 0.9rem;
-  margin-top: clamp(1.5rem, 4vh, 2.75rem);
+  margin-top: clamp(1.25rem, 3.5vh, 2.5rem);
+  color: rgba(255,255,255,0.86);
 }
 
 .hero__scroll span {
   display: block;
   width: 1px;
   height: 3.25rem;
-  background: var(--ink-faint);
+  background: rgba(255,255,255,0.65);
   transform-origin: top;
   animation: draw 2.6s var(--ease) infinite;
 }
@@ -472,18 +487,11 @@ body.is-menu-open .drawer__nav a:nth-child(4) { transition-delay: 0.21s; }
   100%     { transform: scaleY(1); opacity: 0; }
 }
 
-/* phones: photograph first, then the type beneath it */
-@media (max-width: 59.99rem) {
-  .hero__media { order: -1; min-height: 62svh; }
-  .hero__text  { padding-top: clamp(2.5rem, 7vw, 3.5rem); }
-}
-
-/* desktop: the photograph takes the larger share */
-@media (min-width: 60rem) {
-  .hero { grid-template-columns: 1fr 1.12fr; }
-  .hero__media { min-height: 100svh; }
-  .hero__text { padding-right: clamp(2rem, 5vw, 5rem); }
-}
+/* The header floats over the film, so it reads white until it goes solid. */
+.header--overlay:not(.is-solid) { color: var(--white); }
+.header--overlay:not(.is-solid) .nav-toggle span { background: var(--white); }
+.header--overlay.is-solid { color: var(--ink); }
+.header--overlay.is-solid .nav-toggle span { background: var(--ink); }
 
 /* --------------------------------------------------------------------------
    8. Figures
