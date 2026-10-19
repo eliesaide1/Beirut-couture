@@ -22,7 +22,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&display=swap">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="assets/css/style.css?v=7">
+<link rel="stylesheet" href="assets/css/style.css?v=8">
 
 <script type="application/ld+json">
 {
@@ -75,11 +75,14 @@
   <!-- Hero -->
   <section class="hero">
     <div class="hero__media">
-      <img src="assets/img/hero-poster.jpg" alt="Lilac gown with a hand-embroidered sunburst, photographed in a Beirut heritage doorway" width="1920" height="1080" fetchpriority="high">
+      <picture>
+        <source media="(orientation: portrait)" srcset="assets/img/hero-poster-portrait.jpg">
+        <img src="assets/img/hero-poster.jpg" alt="Lilac gown with a hand-embroidered sunburst, photographed in a Beirut heritage doorway" width="1920" height="1080" fetchpriority="high">
+      </picture>
       <video class="hero__video"
              data-hero-reel
              data-src="assets/video/hero.mp4"
-             data-src-small="assets/video/hero-720.mp4"
+             data-src-small="assets/video/hero-portrait.mp4"
              poster="assets/img/hero-poster.jpg"
              muted loop playsinline preload="none"
              aria-hidden="true" tabindex="-1"></video>
@@ -256,6 +259,6 @@
   </div>
 </footer>
 
-<script src="assets/js/main.js?v=7" defer></script>
+<script src="assets/js/main.js?v=8" defer></script>
 </body>
 </html>

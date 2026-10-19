@@ -26,16 +26,27 @@
     var thrifty  = !!(conn && (conn.saveData || /^(slow-)?2g$/.test(conn.effectiveType || '')));
 
     if (motionOK && !thrifty) {
-      var small = window.matchMedia('(max-width: 48rem)').matches;
-      reel.src = small ? reel.dataset.srcSmall : reel.dataset.src;
+      /* Match the film's aspect to the viewport's, so a portrait screen never
+         gets a landscape cut squeezed into it. Width alone misses tablets. */
+      var portrait = window.matchMedia('(orientation: portrait)');
+
+      var pick = function () {
+        var want = portrait.matches ? reel.dataset.srcSmall : reel.dataset.src;
+        if (reel.getAttribute('src') === want) return;
+        reel.setAttribute('src', want);
+        reel.load();
+      };
+
+      pick();
+
+      if (portrait.addEventListener) portrait.addEventListener('change', pick);
+      else if (portrait.addListener) portrait.addListener(pick);
 
       reel.addEventListener('canplay', function () {
         var go = reel.play();
         if (go && go.catch) go.catch(function () { /* autoplay refused — poster stands */ });
         reel.classList.add('is-playing');
       });
-
-      reel.load();
 
       /* Stop decoding while the reel is off screen. */
       if ('IntersectionObserver' in window) {
