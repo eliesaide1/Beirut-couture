@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2000" height="1250" viewBox="0 0 2000 1250" role="img" aria-label="Beirut Couture">
+  <rect width="2000" height="1250" fill="#f1ede8"/>
+  <rect x="24.5" y="24.5" width="1951" height="1201" fill="none" stroke="#ded8d0" stroke-width="1"/>
+  <g font-family="Times New Roman, Times, serif" fill="#b4ada5" text-anchor="middle">
+    <text x="1000" y="619" font-size="125" font-style="italic" font-weight="300">Beirut Couture</text>
+    <text x="1000" y="701" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="47" letter-spacing="10">PLACE HERO IMAGE HERE</text>
+  </g>
+</svg>

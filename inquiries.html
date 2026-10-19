@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Inquiries — Beirut Couture</title>
+<meta name="description" content="Request a private appointment with the Beirut Couture atelier for couture, bridal, prêt-à-porter or fine jewelry commissions.">
+<link rel="canonical" href="https://www.beirutcouture.com/inquiries.html">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Beirut Couture">
+<meta property="og:title" content="Inquiries — Beirut Couture">
+<meta property="og:description" content="Request a private appointment with the atelier.">
+<meta property="og:url" content="https://www.beirutcouture.com/inquiries.html">
+<meta property="og:image" content="https://www.beirutcouture.com/assets/img/inquiries.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&display=swap">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "name": "Inquiries — Beirut Couture",
+  "url": "https://www.beirutcouture.com/inquiries.html",
+  "mainEntity": {
+    "@type": "Organization",
+    "name": "Beirut Couture",
+    "email": "atelier@beirutcouture.com",
+    "address": { "@type": "PostalAddress", "addressLocality": "Beirut", "addressCountry": "LB" },
+    "sameAs": ["https://www.instagram.com/beirut_couture/"]
+  }
+}
+</script>
+</head>
+
+<body>
+<a class="skip label" href="#main">Skip to content</a>
+
+<header class="header is-solid">
+  <div class="shell header__inner">
+    <nav class="nav label" aria-label="Primary">
+      <a href="services.html">Services</a>
+      <a href="portfolio.html">Portfolio</a>
+    </nav>
+    <a class="wordmark" href="index.html">Beirut Couture</a>
+    <nav class="nav nav--end label" aria-label="Secondary">
+      <a href="inquiries.html">Inquiries</a>
+    </nav>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="drawer" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="drawer" id="drawer" aria-hidden="true">
+  <nav class="drawer__nav" aria-label="Menu">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="inquiries.html">Inquiries</a>
+  </nav>
+</div>
+
+<main id="main">
+
+  <section class="section" style="padding-top:calc(var(--header-h) + clamp(4rem,10vw,9rem))">
+    <div class="shell">
+      <div class="split split--wide-text">
+        <div class="stack--loose reveal">
+          <p class="label label--faint">Inquiries</p>
+          <h1 class="display">By<br><span class="italic">Appointment</span></h1>
+        </div>
+        <div class="body-copy reveal" data-delay="1">
+          <p>The atelier receives a limited number of clients each season. Please tell us a little about the occasion, and we will reply within two working days.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="shell">
+      <hr class="rule" style="margin-bottom:clamp(3rem,7vw,5rem)">
+
+      <div class="split split--wide-text" style="align-items:start">
+
+        <form class="form reveal"
+              data-inquiry-form
+              action="REPLACE_WITH_YOUR_FORM_ENDPOINT"
+              method="POST"
+              novalidate>
+
+          <div class="form__row form__row--two">
+            <div class="field">
+              <label class="label label--soft" for="first">First name</label>
+              <input id="first" name="first_name" type="text" autocomplete="given-name" required>
+            </div>
+            <div class="field">
+              <label class="label label--soft" for="last">Last name</label>
+              <input id="last" name="last_name" type="text" autocomplete="family-name" required>
+            </div>
+          </div>
+
+          <div class="form__row form__row--two">
+            <div class="field">
+              <label class="label label--soft" for="email">Email</label>
+              <input id="email" name="email" type="email" autocomplete="email" required>
+            </div>
+            <div class="field">
+              <label class="label label--soft" for="phone">Telephone</label>
+              <input id="phone" name="phone" type="tel" autocomplete="tel">
+            </div>
+          </div>
+
+          <div class="form__row form__row--two">
+            <div class="field">
+              <label class="label label--soft" for="service">Nature of enquiry</label>
+              <select id="service" name="service" required>
+                <option value="">Please select</option>
+                <option>Couture — made to measure</option>
+                <option>Bridal</option>
+                <option>Prêt-à-Porter</option>
+                <option>Fine Jewelry</option>
+                <option>Press</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="field">
+              <label class="label label--soft" for="date">Date of the occasion</label>
+              <input id="date" name="occasion_date" type="date">
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label label--soft" for="city">City</label>
+            <input id="city" name="city" type="text" autocomplete="address-level2" placeholder="Beirut, Paris, Dubai…">
+          </div>
+
+          <div class="field">
+            <label class="label label--soft" for="message">Your message</label>
+            <textarea id="message" name="message" rows="5" placeholder="The occasion, the atmosphere you have in mind, anything we should know."></textarea>
+          </div>
+
+          <!-- Honeypot: silently catches most bots -->
+          <div class="field" style="position:absolute;left:-9999px" aria-hidden="true">
+            <label for="company">Company</label>
+            <input id="company" name="_gotcha" type="text" tabindex="-1" autocomplete="off">
+          </div>
+
+          <div class="stack">
+            <p class="form__status label label--soft" role="status" aria-live="polite"></p>
+            <div>
+              <button class="btn label" type="submit">Submit enquiry</button>
+            </div>
+            <p class="form__note label">Your details are used only to answer this enquiry. We keep no mailing list.</p>
+          </div>
+        </form>
+
+        <aside class="stack--loose reveal" data-delay="1">
+          <figure class="figure">
+            <div class="figure__frame ratio-portrait">
+              <img src="assets/img/inquiries.jpg" alt="The Beirut Couture atelier" width="1200" height="1500" loading="lazy" decoding="async">
+            </div>
+          </figure>
+
+          <div class="stack--tight">
+            <p class="label label--faint">The Atelier</p>
+            <p class="body-copy">Beirut, Lebanon<br>Visits strictly by appointment</p>
+          </div>
+
+          <div class="stack--tight">
+            <p class="label label--faint">Direct</p>
+            <p><a class="label link" href="mailto:atelier@beirutcouture.com">atelier@beirutcouture.com</a></p>
+          </div>
+
+          <div class="stack--tight">
+            <p class="label label--faint">Press &amp; Collaborations</p>
+            <p><a class="label link" href="mailto:press@beirutcouture.com">press@beirutcouture.com</a></p>
+          </div>
+
+          <div class="stack--tight">
+            <p class="label label--faint">Elsewhere</p>
+            <p><a class="label link" href="https://www.instagram.com/beirut_couture/" rel="noopener" target="_blank">Instagram</a></p>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="shell">
+    <div class="footer__grid">
+      <div class="footer__col">
+        <p class="wordmark" style="justify-self:start">Beirut Couture</p>
+        <p class="body-copy" style="max-width:22rem">Where Lebanese couture, prêt-à-porter and fine jewelry converge.</p>
+      </div>
+      <div class="footer__col">
+        <p class="label label--faint">Pages</p>
+        <a class="label" href="index.html">Home</a>
+        <a class="label" href="services.html">Services</a>
+        <a class="label" href="portfolio.html">Portfolio</a>
+        <a class="label" href="inquiries.html">Inquiries</a>
+      </div>
+      <div class="footer__col">
+        <p class="label label--faint">Atelier</p>
+        <a class="label" href="mailto:atelier@beirutcouture.com">atelier@beirutcouture.com</a>
+        <a class="label" href="https://www.instagram.com/beirut_couture/" rel="noopener" target="_blank">Instagram</a>
+        <p class="label label--soft">Beirut, Lebanon<br>By appointment only</p>
+      </div>
+    </div>
+    <div class="footer__base label label--faint">
+      <span>&copy; 2026 Beirut Couture</span>
+      <span>All rights reserved</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>

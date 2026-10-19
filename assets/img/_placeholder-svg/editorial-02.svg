@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" role="img" aria-label="Hand Work">
+  <rect width="1200" height="900" fill="#f1ede8"/>
+  <rect x="24.5" y="24.5" width="1151" height="851" fill="none" stroke="#ded8d0" stroke-width="1"/>
+  <g font-family="Times New Roman, Times, serif" fill="#b4ada5" text-anchor="middle">
+    <text x="600" y="444" font-size="75" font-style="italic" font-weight="300">Hand Work</text>
+    <text x="600" y="496" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="28" letter-spacing="6">EDITORIAL 02</text>
+  </g>
+</svg>
