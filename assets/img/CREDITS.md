@@ -1,6 +1,23 @@
-# Image credits — TEMPORARY stand-ins
+# Image credits
 
-These images are **not** Beirut Couture's own photography. They are openly
+## Beirut Couture's own photography (supplied by the client)
+
+| File | Used on |
+|---|---|
+| `hero.jpg`, `hero-portrait.jpg` | Home hero (landscape / phone) |
+| `hero-2.jpg`, `hero-2-portrait.jpg` | Second hero reel frame |
+| `assets/video/hero.mp4`, `hero-720.mp4` | Hero reel, composed from the two above |
+| `brand-01.jpg` | Home Selected Work + Portfolio |
+| `brand-02.jpg` | Home Selected Work + Portfolio |
+
+Copyright belongs to Beirut Couture / their photographer. Confirm web usage
+rights with the photographer before launch if they were shot on commission.
+
+---
+
+## Temporary stand-ins — still to be replaced
+
+The remaining images are **not** Beirut Couture's own photography. They are openly
 licensed museum photographs used so the layout can be judged with real
 images in place. Replace them with the brand's own photography before launch.
 
