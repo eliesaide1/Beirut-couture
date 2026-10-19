@@ -98,3 +98,22 @@ way; there is nothing to build.
 - **JS is optional.** Every page reads and navigates fine with JavaScript off —
   scroll reveals, the filter, the lightbox and the drawer are enhancements only.
 - **Motion** respects `prefers-reduced-motion`.
+
+## Deploying an update
+
+GitHub Pages serves every file with `cache-control: max-age=600`, so browsers
+hold the HTML and CSS for ten minutes. A visitor who loaded the site before an
+update can see the old page mixed with new assets.
+
+The CSS and JS are therefore referenced with a version query string:
+
+```html
+<link rel="stylesheet" href="assets/css/style.css?v=7">
+<script src="assets/js/main.js?v=7" defer></script>
+```
+
+**Bump that number in all four HTML files whenever you change the CSS or JS.**
+Browsers treat the new URL as a new file and fetch it immediately.
+
+Images and video are content-addressed by filename, so replacing an image with
+the same name is still subject to the ten-minute window — rename it, or wait.
