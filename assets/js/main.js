@@ -30,11 +30,47 @@
          gets a landscape cut squeezed into it. Width alone misses tablets. */
       var portrait = window.matchMedia('(orientation: portrait)');
 
+      /* Should the film be running right now? Only if it is on screen and
+         the tab is actually in front. */
+      var inView  = true;
+      var wantsPlay = function () { return inView && !document.hidden; };
+
+      /* Safari refuses to go on forever if autoplay is blocked, so cap the
+         retries rather than nagging in a loop. Reset whenever playback
+         genuinely starts, or when the reader comes back to the tab. */
+      var tries = 0;
+
       var start = function () {
+        if (!wantsPlay() || !reel.paused || tries > 8) return;
+        tries++;
         var go = reel.play();
-        if (go && go.catch) go.catch(function () { /* autoplay refused — poster stands */ });
-        reel.classList.add('is-playing');
+        if (go && go.then) {
+          go.then(function () { tries = 0; })
+            .catch(function () { /* autoplay refused — poster stands */ });
+        }
       };
+
+      /* `is-playing` fades the film in over the poster, so it must only go on
+         once frames are genuinely moving. Latching it on the play() CALL meant
+         a refused or stalled reel hid the poster behind a frozen frame. */
+      reel.addEventListener('playing', function () {
+        tries = 0;
+        reel.classList.add('is-playing');
+      });
+
+      /* Defensive, not a reproduced bug: a UA may pause the reel on its own
+         (Low Power Mode, a media interruption). The IntersectionObserver
+         below only fires when intersection CHANGES, so with the hero already
+         in view there would otherwise be nothing to restart the film. */
+      reel.addEventListener('pause', function () {
+        if (wantsPlay()) setTimeout(start, 150);
+      });
+
+      document.addEventListener('visibilitychange', function () {
+        if (document.hidden) return;
+        tries = 0;
+        start();
+      });
 
       /* Listeners FIRST. A cached file can reach canplay before the next
          statement runs, and a listener attached afterwards would never hear
@@ -61,7 +97,8 @@
       if ('IntersectionObserver' in window) {
         new IntersectionObserver(function (entries) {
           entries.forEach(function (e) {
-            if (e.isIntersecting) { if (reel.paused) reel.play().catch(function () {}); }
+            inView = e.isIntersecting;
+            if (inView) { tries = 0; start(); }
             else if (!reel.paused) { reel.pause(); }
           });
         }, { threshold: 0.1 }).observe(reel);
@@ -223,17 +260,35 @@
     };
 
     form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      /* The form carries `novalidate`, which suppresses the browser's own
+         prompts — so the check has to be made here. Without it a completely
+         empty form was answered with "your enquiry has been received", and
+         once a real endpoint is set it would POST blank enquiries. */
+      form.classList.add('was-validated');
+      if (!form.checkValidity()) {
+        var firstBad = form.querySelector(':invalid');
+        say('Please complete the highlighted fields — we need a name, an email and the nature of your enquiry.');
+        if (firstBad && firstBad.focus) {
+          firstBad.focus();
+          if (firstBad.scrollIntoView) {
+            firstBad.scrollIntoView({ block: 'center', behavior: 'smooth' });
+          }
+        }
+        return;
+      }
+
       var action = form.getAttribute('action') || '';
       var configured = action && action.indexOf('REPLACE') === -1;
 
       if (!configured) {
-        e.preventDefault();
         say('Thank you. Your enquiry has been received — we reply within two working days.');
         form.reset();
+        form.classList.remove('was-validated');
         return;
       }
 
-      e.preventDefault();
       if (submit) { submit.disabled = true; submit.textContent = 'Sending'; }
 
       fetch(action, {
@@ -245,6 +300,7 @@
           if (!res.ok) throw new Error('Request failed');
           say('Thank you. Your enquiry has been received — we reply within two working days.');
           form.reset();
+          form.classList.remove('was-validated');
         })
         .catch(function () {
           say('Something interrupted the send. Please write to us directly at atelier@beirutcouture.com.');

@@ -16,6 +16,7 @@
   --ink-faint: #6f6861;   /* 5.5:1  — labels, meta, captions */
   --ink-ghost: #a9a39d;   /* reserved: decorative only, not currently used for text */
   --rule:      #e4dfd8;
+  --flag:      #8a4a4a;   /* 5.9:1 on white — unanswered required field */
 
   /* Type
      Calibri throughout — display and UI both. Client decision.
@@ -327,12 +328,10 @@ h1, h2, h3, h4 {
 .nav a:hover::after,
 .nav a[aria-current="page"]::after { transform: scaleX(1); }
 
-@media (min-width: 60rem) {
-  .nav { display: flex; }
-  .nav-toggle { display: none; }
-}
-
-/* Burger */
+/* Burger. This block MUST stay above the min-width:60rem query below — it
+   sets `display: grid` at the same specificity as the `display: none` there,
+   so if it comes after, it wins and the burger shows on desktop alongside
+   the full nav. */
 .nav-toggle {
   grid-column: 3;
   justify-self: end;
@@ -340,6 +339,11 @@ h1, h2, h3, h4 {
   gap: 5px;
   padding: 0.75rem 0;
   width: 1.5rem;
+}
+
+@media (min-width: 60rem) {
+  .nav { display: flex; }
+  .nav-toggle { display: none; }
 }
 
 .nav-toggle span {
@@ -667,6 +671,18 @@ body.is-menu-open .drawer__nav a:nth-child(4) { transition-delay: 0.21s; }
 
 .field input::placeholder,
 .field textarea::placeholder { color: var(--ink-faint); }
+
+/* Only after a submit attempt — marking fields invalid while someone is
+   still filling the form in is hostile. main.js adds `was-validated`.
+   The label sits BEFORE its input in the markup, so flagging it needs
+   :has() on the field rather than a sibling combinator. */
+.form.was-validated .field input:invalid,
+.form.was-validated .field select:invalid,
+.form.was-validated .field textarea:invalid {
+  border-bottom-color: var(--flag);
+}
+
+.form.was-validated .field:has(:invalid) label { color: var(--flag); }
 
 .form__note { color: var(--ink-faint); max-width: 30rem; }
 
