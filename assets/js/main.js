@@ -313,7 +313,7 @@
 
   /* ---- Mark current page in nav ---------------------------------------- */
   var here = location.pathname.split('/').pop() || 'index.html';
-  document.querySelectorAll('.nav a, .drawer__nav a').forEach(function (a) {
+  document.querySelectorAll('.drawer__nav a').forEach(function (a) {
     if (a.getAttribute('href') === here) a.setAttribute('aria-current', 'page');
   });
 })();
