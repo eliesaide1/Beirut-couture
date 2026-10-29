@@ -1,6 +1,6 @@
 /* ==========================================================================
    BEIRUT COUTURE
-   Editorial type system — white dominant, didone serif, tracked grotesque.
+   Editorial type system — white dominant, humanist sans throughout.
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
@@ -18,12 +18,16 @@
   --rule:      #e4dfd8;
 
   /* Type
-     Dior's own faces are proprietary and cannot be licensed for this site.
-     Closest legitimate match, same didone lineage as their lettering:
-     Bodoni Moda for display, a neutral grotesque for UI and body — which is
-     how Dior themselves split it.                                        */
-  --display: "Bodoni Moda", Didot, "Times New Roman", Times, serif;
-  --sans:    "Helvetica Neue", Helvetica, Arial, sans-serif;
+     Calibri throughout — display and UI both. Client decision.
+     Served by Google Fonts, which licenses it from Monotype; that licence
+     covers serving the webfont only, so the wordmark is live text here and
+     must NOT be converted to outlines the way an OFL face could be.
+     Calibri ships 400/700 roman and italic only — there is no 300, so
+     nothing in this file may ask for one (see .numeral).
+     Carlito is the metric-compatible OFL fallback; Candara and Segoe UI
+     are the nearest Microsoft humanist sans if neither resolves.       */
+  --display: Calibri, Carlito, Candara, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --sans:    Calibri, Carlito, Candara, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   --serif:   var(--display);   /* alias, kept so older rules still resolve */
 
   /* Rhythm — deliberately slow */
@@ -148,7 +152,7 @@ h1, h2, h3, h4 {
   font-family: var(--display);
   font-size: clamp(2.5rem, 6vw, 4.5rem);
   font-style: italic;
-  font-weight: 300;
+  font-weight: 400;          /* Calibri has no 300 — asking for one fakes it */
   color: var(--ink-faint);
   line-height: 1;
 }
@@ -281,6 +285,10 @@ h1, h2, h3, h4 {
   gap: 1rem;
 }
 
+/* Wordmark. Live text, not outlines: the Google/Monotype licence for Calibri
+   covers serving the font, not redistributing its glyph shapes, so this may
+   not be converted to SVG paths. That means it does depend on the webfont
+   loading, and the tracking is letter-spacing rather than baked artwork. */
 .wordmark {
   grid-column: 2;
   justify-self: center;
@@ -290,6 +298,7 @@ h1, h2, h3, h4 {
   letter-spacing: 0.32em;
   text-transform: uppercase;
   white-space: nowrap;
+  margin: 0;
 }
 
 .nav {
