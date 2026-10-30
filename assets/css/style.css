@@ -529,6 +529,15 @@ body.is-menu-open .drawer__nav a:nth-child(5) { transition-delay: 0.28s; }
 .ratio-tall      { aspect-ratio: 2 / 3; }
 .ratio-landscape { aspect-ratio: 4 / 3; }
 .ratio-square    { aspect-ratio: 1 / 1; }
+.ratio-film      { aspect-ratio: 91 / 48; }   /* the introductory film, 2730 x 1440 */
+
+.figure__frame video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: var(--ink);
+}
 
 .ratio-portrait img, .ratio-tall img, .ratio-landscape img, .ratio-square img {
   height: 100%;

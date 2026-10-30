@@ -106,6 +106,26 @@
     }
   }
 
+  /* ---- Introductory film ------------------------------------------------ *
+   * Plays on its own, muted, only while it is on screen — so it neither
+   * downloads nor runs before it is seen. Reduced-motion readers get the
+   * poster and the controls instead. Without JS the controls still work.
+   * ---------------------------------------------------------------------- */
+  var film = document.querySelector('video[data-autoplay]');
+  if (film && 'IntersectionObserver' in window &&
+      !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          var go = film.play();
+          if (go && go.catch) go.catch(function () { /* blocked — poster and controls stand */ });
+        } else if (!film.paused) {
+          film.pause();
+        }
+      });
+    }, { threshold: 0.35 }).observe(film);
+  }
+
   /* ---- Mobile drawer ---------------------------------------------------- */
   var toggle = document.querySelector('.nav-toggle');
   var drawer = document.querySelector('.drawer');
