@@ -145,6 +145,12 @@ h1, h2, h3, h4 {
   letter-spacing: 0.012em;
   max-width: var(--measure);
   color: var(--ink-soft);
+
+  /* Every paragraph is justified; hyphenation keeps the word spacing even. */
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+  -webkit-hyphens: auto;
 }
 .body-copy p + p { margin-top: 1.4em; }
 
