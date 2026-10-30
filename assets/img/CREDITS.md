@@ -7,7 +7,6 @@ supplied by the client. No stock, no museum images, no placeholders remain.
 |---|---|
 | `hero-poster.jpg` | Home hero still, shown until the film can play |
 | `og-card.jpg` | Link-preview card (1200x630) |
-| `assets/video/hero.mp4`, `hero-720.mp4` | Hero film, cut from six of the supplied photographs |
 | `work-01.jpg` … `work-15.jpg` | Portfolio archive, and Selected Work on the home page |
 | `editorial-01.jpg`, `editorial-02.jpg` | Home — maison statement and archive band |
 | `service-couture.jpg`, `service-pret.jpg`, `service-jewelry.jpg` | Services + Home |

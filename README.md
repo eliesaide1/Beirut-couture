@@ -32,7 +32,6 @@ Drop real files in using the **same filenames** and nothing else needs editing:
 | File | Used on | Size in use |
 |---|---|---|
 | `hero-poster.jpg` | Home hero — still shown before the film loads | 1920 x 1080 landscape |
-| `assets/video/hero.mp4` | Home hero film (1080p) + `hero-720.mp4` for phones | 1920 x 1080, no audio |
 | `og-card.jpg` | Link-preview card | 1200 x 630 |
 | `editorial-01.jpg` | Home — maison statement | 1200 x 1500 portrait |
 | `editorial-02.jpg` | Home — finishing detail | 1600 x 1200 landscape |
