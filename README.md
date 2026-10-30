@@ -56,8 +56,10 @@ The original grey SVG placeholders are kept in `assets/img/_placeholder-svg/`.
 
 ## 2. Make the form actually send
 
-`inquiries.html` has `action="REPLACE_WITH_YOUR_FORM_ENDPOINT"`. Until that is
-replaced the form shows a success message without sending anything.
+`inquiries.html` has one form and `concierge.html` has three (Bridal, Couture,
+Fine Jewelry — each posts a hidden `service` field naming itself). Every one has
+`action="REPLACE_WITH_YOUR_FORM_ENDPOINT"`. Until that is replaced each form
+shows a success message without sending anything.
 
 **Formspree** (works on any host): create a form at formspree.io, then
 

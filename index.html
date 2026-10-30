@@ -22,7 +22,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Calibri:ital,wght@0,400;0,700;1,400;1,700&display=swap">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="assets/css/style.css?v=44">
+<link rel="stylesheet" href="assets/css/style.css?v=50">
 
 <script type="application/ld+json">
 {
@@ -133,6 +133,212 @@
           </figcaption>
         </figure>
       </div>
+    </div>
+  </section>
+
+  <!-- Concierge -->
+  <section class="section" id="concierge" style="padding-top:0">
+    <div class="shell">
+      <div class="section-head__meta reveal" style="margin-bottom:clamp(2.5rem,6vw,4.5rem)"><p class="label label--faint">Concierge</p></div>
+
+      <article class="concierge-item reveal" id="bridal">
+        <h2 class="h-lg">Bridal Concierge</h2>
+        <div class="concierge-item__body">
+          <div class="body-copy body-copy--lg">
+            <p>A discreet, highly personalized service for brides seeking an exceptional wedding wardrobe, curated around their style and vision. From private appointments with reputable Lebanese designers to fittings, fine jewelry and multiple looks, every detail is considered with a focus on exceptional craftsmanship and personal attention.</p>
+            <p>Offering a trusted point of contact throughout the journey, the Bridal Concierge provides access to a considered selection of Lebanese couture, prêt-à-porter and fine jewelry. Available to a limited number of brides each wedding season, by inquiry.</p>
+          </div>
+          <details class="inquire">
+            <summary class="label">Inquire about the Bridal Concierge<span class="inquire__icon" aria-hidden="true"></span></summary>
+            <form class="form" data-inquiry-form
+                  action="REPLACE_WITH_YOUR_FORM_ENDPOINT" method="POST" novalidate>
+              <input type="hidden" name="service" value="Bridal Concierge">
+
+              <div class="form__row form__row--two">
+              <div class="field">
+                <label class="label label--soft" for="b-full_name">Full name</label>
+                <input id="b-full_name" name="full_name" type="text" autocomplete="name" required>
+              </div>
+              <div class="field">
+                <label class="label label--soft" for="b-email">Email address</label>
+                <input id="b-email" name="email" type="email" autocomplete="email" required>
+              </div>
+              </div>
+
+              <div class="form__row form__row--two">
+              <div class="field">
+                <label class="label label--soft" for="b-phone">Phone / WhatsApp</label>
+                <input id="b-phone" name="phone" type="tel" autocomplete="tel" required>
+              </div>
+              <div class="field">
+                <label class="label label--soft" for="b-wedding_date">Wedding date (optional)</label>
+                <input id="b-wedding_date" name="wedding_date" type="date">
+              </div>
+              </div>
+
+              <div class="form__row form__row--two">
+              <div class="field">
+                <label class="label label--soft" for="b-wedding_location">Wedding location (optional)</label>
+                <input id="b-wedding_location" name="wedding_location" type="text">
+              </div>
+              <div class="field">
+                <label class="label label--soft" for="b-wedding_planner">Wedding planner (optional)</label>
+                <input id="b-wedding_planner" name="wedding_planner" type="text">
+              </div>
+              </div>
+
+              <div class="field">
+                <label class="label label--soft" for="b-wedding_venues">Wedding venue(s) (optional)</label>
+                <input id="b-wedding_venues" name="wedding_venues" type="text">
+              </div>
+
+              <div class="field">
+                <label class="label label--soft" for="b-budget">Anticipated wedding wardrobe budget</label>
+                <input id="b-budget" name="budget" type="text" required>
+              </div>
+
+              <div class="field">
+                <label class="label label--soft" for="b-message">Tell us more about you, your partner and your dream wedding</label>
+                <textarea id="b-message" name="message" rows="5" required></textarea>
+              </div>
+
+              <!-- Honeypot: silently catches most bots -->
+              <div class="field" style="position:absolute;left:-9999px" aria-hidden="true">
+                <label for="b-company">Company</label>
+                <input id="b-company" name="_gotcha" type="text" tabindex="-1" autocomplete="off">
+              </div>
+
+              <div class="stack">
+                <p class="form__status label label--soft" role="status" aria-live="polite"></p>
+                <div><button class="btn label" type="submit">Submit inquiry</button></div>
+                <p class="form__note label">The information you provide will be used only to respond to your inquiry.</p>
+              </div>
+            </form>
+          </details>
+        </div>
+      </article>
+
+      <article class="concierge-item reveal" id="couture">
+        <h2 class="h-lg">Couture Concierge</h2>
+        <div class="concierge-item__body">
+          <div class="body-copy body-copy--lg">
+            <p>A personalized service connecting clients with exceptional Lebanese couture, from discovering the right Lebanese designers and creations to coordinating private appointments and bespoke requests.</p>
+          </div>
+          <details class="inquire">
+            <summary class="label">Inquire about the Couture Concierge<span class="inquire__icon" aria-hidden="true"></span></summary>
+            <form class="form" data-inquiry-form
+                  action="REPLACE_WITH_YOUR_FORM_ENDPOINT" method="POST" novalidate>
+              <input type="hidden" name="service" value="Couture Concierge">
+
+              <div class="form__row form__row--two">
+              <div class="field">
+                <label class="label label--soft" for="c-full_name">Full name</label>
+                <input id="c-full_name" name="full_name" type="text" autocomplete="name" required>
+              </div>
+              <div class="field">
+                <label class="label label--soft" for="c-email">Email address</label>
+                <input id="c-email" name="email" type="email" autocomplete="email" required>
+              </div>
+              </div>
+
+              <div class="form__row form__row--two">
+              <div class="field">
+                <label class="label label--soft" for="c-phone">Phone / WhatsApp</label>
+                <input id="c-phone" name="phone" type="tel" autocomplete="tel" required>
+              </div>
+              <div class="field">
+                <label class="label label--soft" for="c-budget">Anticipated couture budget</label>
+                <input id="c-budget" name="budget" type="text" required>
+              </div>
+              </div>
+
+              <div class="field">
+                <label class="label label--soft" for="c-occasion">Occasion or purpose (optional)</label>
+                <select id="c-occasion" name="occasion">
+                  <option value="">Please select</option>
+                  <option>Personal wardrobe</option>
+                  <option>Special event</option>
+                  <option>Bespoke creation</option>
+                  <option>Other</option>
+                </select>
+              </div>
+
+              <!-- Honeypot: silently catches most bots -->
+              <div class="field" style="position:absolute;left:-9999px" aria-hidden="true">
+                <label for="c-company">Company</label>
+                <input id="c-company" name="_gotcha" type="text" tabindex="-1" autocomplete="off">
+              </div>
+
+              <div class="stack">
+                <p class="form__status label label--soft" role="status" aria-live="polite"></p>
+                <div><button class="btn label" type="submit">Submit inquiry</button></div>
+                <p class="form__note label">The information you provide will be used only to respond to your inquiry.</p>
+              </div>
+            </form>
+          </details>
+        </div>
+      </article>
+
+      <article class="concierge-item reveal" id="jewelry">
+        <h2 class="h-lg">Fine Jewelry Concierge</h2>
+        <div class="concierge-item__body">
+          <div class="body-copy body-copy--lg">
+            <p>A personalized introduction to unique and exceptional Lebanese fine jewelry, connecting clients with Lebanese jewelry designers and helping them discover pieces suited to their taste, occasion and/or collection.</p>
+          </div>
+          <details class="inquire">
+            <summary class="label">Inquire about the Jewelry Concierge<span class="inquire__icon" aria-hidden="true"></span></summary>
+            <form class="form" data-inquiry-form
+                  action="REPLACE_WITH_YOUR_FORM_ENDPOINT" method="POST" novalidate>
+              <input type="hidden" name="service" value="Fine Jewelry Concierge">
+
+              <div class="form__row form__row--two">
+              <div class="field">
+                <label class="label label--soft" for="j-full_name">Full name</label>
+                <input id="j-full_name" name="full_name" type="text" autocomplete="name" required>
+              </div>
+              <div class="field">
+                <label class="label label--soft" for="j-email">Email address</label>
+                <input id="j-email" name="email" type="email" autocomplete="email" required>
+              </div>
+              </div>
+
+              <div class="form__row form__row--two">
+              <div class="field">
+                <label class="label label--soft" for="j-phone">Phone / WhatsApp</label>
+                <input id="j-phone" name="phone" type="tel" autocomplete="tel" required>
+              </div>
+              <div class="field">
+                <label class="label label--soft" for="j-budget">Anticipated jewelry budget</label>
+                <input id="j-budget" name="budget" type="text" required>
+              </div>
+              </div>
+
+              <div class="field">
+                <label class="label label--soft" for="j-occasion">Occasion or purpose (optional)</label>
+                <select id="j-occasion" name="occasion">
+                  <option value="">Please select</option>
+                  <option>Bridal</option>
+                  <option>A special gift</option>
+                  <option>A personal collection</option>
+                  <option>Other</option>
+                </select>
+              </div>
+
+              <!-- Honeypot: silently catches most bots -->
+              <div class="field" style="position:absolute;left:-9999px" aria-hidden="true">
+                <label for="j-company">Company</label>
+                <input id="j-company" name="_gotcha" type="text" tabindex="-1" autocomplete="off">
+              </div>
+
+              <div class="stack">
+                <p class="form__status label label--soft" role="status" aria-live="polite"></p>
+                <div><button class="btn label" type="submit">Submit inquiry</button></div>
+                <p class="form__note label">The information you provide will be used only to respond to your inquiry.</p>
+              </div>
+            </form>
+          </details>
+        </div>
+      </article>
     </div>
   </section>
 
@@ -271,6 +477,6 @@
   </div>
 </footer>
 
-<script src="assets/js/main.js?v=44" defer></script>
+<script src="assets/js/main.js?v=50" defer></script>
 </body>
 </html>

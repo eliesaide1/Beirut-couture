@@ -268,10 +268,10 @@
    * Posts to the endpoint in the form's `action`. Until you set a real one
    * (Formspree / Netlify Forms), it resolves locally so the flow is testable.
    * ---------------------------------------------------------------------- */
-  var form = document.querySelector('[data-inquiry-form]');
-  if (form) {
+  Array.prototype.forEach.call(document.querySelectorAll('[data-inquiry-form]'), function (form) {
     var status = form.querySelector('.form__status');
     var submit = form.querySelector('[type="submit"]');
+    var label  = submit ? submit.textContent : '';
 
     var say = function (message) {
       if (!status) return;
@@ -289,7 +289,7 @@
       form.classList.add('was-validated');
       if (!form.checkValidity()) {
         var firstBad = form.querySelector(':invalid');
-        say('Please complete the highlighted fields — we need a name, an email and the nature of your enquiry.');
+        say('Please complete the highlighted fields.');
         if (firstBad && firstBad.focus) {
           firstBad.focus();
           if (firstBad.scrollIntoView) {
@@ -326,10 +326,10 @@
           say('Something interrupted the send. Please write to us directly at atelier@beirutcouture.com.');
         })
         .then(function () {
-          if (submit) { submit.disabled = false; submit.textContent = 'Submit enquiry'; }
+          if (submit) { submit.disabled = false; submit.textContent = label; }
         });
     });
-  }
+  });
 
   /* ---- Mark current page in nav ---------------------------------------- */
   var here = location.pathname.split('/').pop() || 'index.html';

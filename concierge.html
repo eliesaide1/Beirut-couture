@@ -5,13 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>Concierge — Beirut Couture</title>
-<meta name="description" content="Private client service from the Beirut Couture atelier: appointments at home or abroad, travelling fittings, wardrobe care, restoration and archive access.">
+<meta name="description" content="Bridal, Couture and Fine Jewelry Concierge: personalized introductions to Lebanese designers and jewelers, by inquiry.">
 <link rel="canonical" href="https://www.beirutcouture.com/concierge.html">
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Beirut Couture">
 <meta property="og:title" content="Concierge — Beirut Couture">
-<meta property="og:description" content="Private client service — at the atelier, at home, or wherever the occasion is.">
+<meta property="og:description" content="Bridal, Couture and Fine Jewelry Concierge — personalized introductions to Lebanese designers and jewelers.">
 <meta property="og:url" content="https://www.beirutcouture.com/concierge.html">
 <meta property="og:image" content="https://www.beirutcouture.com/assets/img/inquiries.jpg">
 <meta name="twitter:card" content="summary_large_image">
@@ -21,7 +21,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Calibri:ital,wght@0,400;0,700;1,400;1,700&display=swap">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="assets/css/style.css?v=44">
+<link rel="stylesheet" href="assets/css/style.css?v=50">
 
 <script type="application/ld+json">
 {
@@ -65,89 +65,208 @@
 
 <main id="main">
 
-  <section class="section" style="padding-top:calc(var(--header-h) + clamp(4rem,10vw,9rem))">
+  <section class="section" style="padding-top:calc(var(--header-h) + clamp(3rem,7vw,6rem))">
     <div class="shell">
-      <div class="split split--wide-text">
-        <div class="stack--loose reveal">
-          <p class="label label--faint">Concierge</p>
-          <h1 class="display">At Your<br><span class="italic">Service</span></h1>
-        </div>
-        <div class="body-copy reveal" data-delay="1">
-          <p>A commission does not end when the piece is delivered. The atelier keeps every pattern it has ever cut, and remains available to the people it was cut for.</p>
-          <p>What follows is offered to clients of the house, without charge unless the work is substantial.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+      <div class="section-head__meta reveal" style="margin-bottom:clamp(2.5rem,6vw,4.5rem)"><p class="label label--faint">Concierge</p></div>
 
-  <section class="section--tight" id="appointments">
-    <div class="shell">
-      <div class="service reveal">
-        <p class="numeral">I</p>
-        <div class="stack">
-          <h2 class="h-lg">Appointments</h2>
-          <p class="label label--faint">Beirut, or wherever you are</p>
-        </div>
-        <div class="stack">
-          <div class="body-copy">
-            <p>Fittings take place at the atelier by default. Where an occasion makes that impractical, a fitter travels — Paris, London, the Gulf and further by arrangement.</p>
+      <article class="concierge-item reveal" id="bridal">
+        <h2 class="h-lg">Bridal Concierge</h2>
+        <div class="concierge-item__body">
+          <div class="body-copy body-copy--lg">
+            <p>A discreet, highly personalized service for brides seeking an exceptional wedding wardrobe, curated around their style and vision. From private appointments with reputable Lebanese designers to fittings, fine jewelry and multiple looks, every detail is considered with a focus on exceptional craftsmanship and personal attention.</p>
+            <p>Offering a trusted point of contact throughout the journey, the Bridal Concierge provides access to a considered selection of Lebanese couture, prêt-à-porter and fine jewelry. Available to a limited number of brides each wedding season, by inquiry.</p>
           </div>
-          <ul class="service__list label label--soft">
-            <li>Private consultation, by appointment only</li>
-            <li>Travelling fittings by arrangement</li>
-            <li>Evening and weekend appointments for clients abroad</li>
-            <li>Discretion as a matter of course</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
+          <details class="inquire">
+            <summary class="label">Inquire about the Bridal Concierge<span class="inquire__icon" aria-hidden="true"></span></summary>
+            <form class="form" data-inquiry-form
+                  action="REPLACE_WITH_YOUR_FORM_ENDPOINT" method="POST" novalidate>
+              <input type="hidden" name="service" value="Bridal Concierge">
 
-  <section class="section--tight" id="wardrobe">
-    <div class="shell">
-      <div class="service reveal">
-        <p class="numeral">II</p>
-        <div class="stack">
-          <h2 class="h-lg">Wardrobe Care</h2>
-          <p class="label label--faint">For the life of the piece</p>
-        </div>
-        <div class="stack">
-          <div class="body-copy">
-            <p>Couture is not dry-cleaned like anything else. Beading, hand-rolled edges and structured foundations each want different handling, and most of it we would rather do ourselves.</p>
-          </div>
-          <ul class="service__list label label--soft">
-            <li>Cleaning and pressing by specialists we appoint</li>
-            <li>Re-fitting as the body changes</li>
-            <li>Storage advice, and boxing for travel</li>
-            <li>Repair of beading and embroidery</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
+              <div class="form__row form__row--two">
+              <div class="field">
+                <label class="label label--soft" for="b-full_name">Full name</label>
+                <input id="b-full_name" name="full_name" type="text" autocomplete="name" required>
+              </div>
+              <div class="field">
+                <label class="label label--soft" for="b-email">Email address</label>
+                <input id="b-email" name="email" type="email" autocomplete="email" required>
+              </div>
+              </div>
 
-  <section class="section--tight" id="archive">
-    <div class="shell">
-      <div class="service reveal">
-        <p class="numeral">III</p>
-        <div class="stack">
-          <h2 class="h-lg">Archive &amp; Restoration</h2>
-          <p class="label label--faint">Including pieces that are not ours</p>
+              <div class="form__row form__row--two">
+              <div class="field">
+                <label class="label label--soft" for="b-phone">Phone / WhatsApp</label>
+                <input id="b-phone" name="phone" type="tel" autocomplete="tel" required>
+              </div>
+              <div class="field">
+                <label class="label label--soft" for="b-wedding_date">Wedding date (optional)</label>
+                <input id="b-wedding_date" name="wedding_date" type="date">
+              </div>
+              </div>
+
+              <div class="form__row form__row--two">
+              <div class="field">
+                <label class="label label--soft" for="b-wedding_location">Wedding location (optional)</label>
+                <input id="b-wedding_location" name="wedding_location" type="text">
+              </div>
+              <div class="field">
+                <label class="label label--soft" for="b-wedding_planner">Wedding planner (optional)</label>
+                <input id="b-wedding_planner" name="wedding_planner" type="text">
+              </div>
+              </div>
+
+              <div class="field">
+                <label class="label label--soft" for="b-wedding_venues">Wedding venue(s) (optional)</label>
+                <input id="b-wedding_venues" name="wedding_venues" type="text">
+              </div>
+
+              <div class="field">
+                <label class="label label--soft" for="b-budget">Anticipated wedding wardrobe budget</label>
+                <input id="b-budget" name="budget" type="text" required>
+              </div>
+
+              <div class="field">
+                <label class="label label--soft" for="b-message">Tell us more about you, your partner and your dream wedding</label>
+                <textarea id="b-message" name="message" rows="5" required></textarea>
+              </div>
+
+              <!-- Honeypot: silently catches most bots -->
+              <div class="field" style="position:absolute;left:-9999px" aria-hidden="true">
+                <label for="b-company">Company</label>
+                <input id="b-company" name="_gotcha" type="text" tabindex="-1" autocomplete="off">
+              </div>
+
+              <div class="stack">
+                <p class="form__status label label--soft" role="status" aria-live="polite"></p>
+                <div><button class="btn label" type="submit">Submit inquiry</button></div>
+                <p class="form__note label">The information you provide will be used only to respond to your inquiry.</p>
+              </div>
+            </form>
+          </details>
         </div>
-        <div class="stack">
-          <div class="body-copy">
-            <p>Every pattern is kept. A piece made for a mother can be remade for a daughter, in her measurements, in the same cloth where the cloth still exists.</p>
-            <p>We also restore family pieces of other houses, where the work is within our hands to do honestly.</p>
+      </article>
+
+      <article class="concierge-item reveal" id="couture">
+        <h2 class="h-lg">Couture Concierge</h2>
+        <div class="concierge-item__body">
+          <div class="body-copy body-copy--lg">
+            <p>A personalized service connecting clients with exceptional Lebanese couture, from discovering the right Lebanese designers and creations to coordinating private appointments and bespoke requests.</p>
           </div>
-          <ul class="service__list label label--soft">
-            <li>Patterns retained indefinitely</li>
-            <li>Remaking from the archive</li>
-            <li>Restoration of heirloom dress and jewelry</li>
-            <li>Written condition report before any work begins</li>
-          </ul>
+          <details class="inquire">
+            <summary class="label">Inquire about the Couture Concierge<span class="inquire__icon" aria-hidden="true"></span></summary>
+            <form class="form" data-inquiry-form
+                  action="REPLACE_WITH_YOUR_FORM_ENDPOINT" method="POST" novalidate>
+              <input type="hidden" name="service" value="Couture Concierge">
+
+              <div class="form__row form__row--two">
+              <div class="field">
+                <label class="label label--soft" for="c-full_name">Full name</label>
+                <input id="c-full_name" name="full_name" type="text" autocomplete="name" required>
+              </div>
+              <div class="field">
+                <label class="label label--soft" for="c-email">Email address</label>
+                <input id="c-email" name="email" type="email" autocomplete="email" required>
+              </div>
+              </div>
+
+              <div class="form__row form__row--two">
+              <div class="field">
+                <label class="label label--soft" for="c-phone">Phone / WhatsApp</label>
+                <input id="c-phone" name="phone" type="tel" autocomplete="tel" required>
+              </div>
+              <div class="field">
+                <label class="label label--soft" for="c-budget">Anticipated couture budget</label>
+                <input id="c-budget" name="budget" type="text" required>
+              </div>
+              </div>
+
+              <div class="field">
+                <label class="label label--soft" for="c-occasion">Occasion or purpose (optional)</label>
+                <select id="c-occasion" name="occasion">
+                  <option value="">Please select</option>
+                  <option>Personal wardrobe</option>
+                  <option>Special event</option>
+                  <option>Bespoke creation</option>
+                  <option>Other</option>
+                </select>
+              </div>
+
+              <!-- Honeypot: silently catches most bots -->
+              <div class="field" style="position:absolute;left:-9999px" aria-hidden="true">
+                <label for="c-company">Company</label>
+                <input id="c-company" name="_gotcha" type="text" tabindex="-1" autocomplete="off">
+              </div>
+
+              <div class="stack">
+                <p class="form__status label label--soft" role="status" aria-live="polite"></p>
+                <div><button class="btn label" type="submit">Submit inquiry</button></div>
+                <p class="form__note label">The information you provide will be used only to respond to your inquiry.</p>
+              </div>
+            </form>
+          </details>
         </div>
-      </div>
-      <hr class="rule">
+      </article>
+
+      <article class="concierge-item reveal" id="jewelry">
+        <h2 class="h-lg">Fine Jewelry Concierge</h2>
+        <div class="concierge-item__body">
+          <div class="body-copy body-copy--lg">
+            <p>A personalized introduction to unique and exceptional Lebanese fine jewelry, connecting clients with Lebanese jewelry designers and helping them discover pieces suited to their taste, occasion and/or collection.</p>
+          </div>
+          <details class="inquire">
+            <summary class="label">Inquire about the Jewelry Concierge<span class="inquire__icon" aria-hidden="true"></span></summary>
+            <form class="form" data-inquiry-form
+                  action="REPLACE_WITH_YOUR_FORM_ENDPOINT" method="POST" novalidate>
+              <input type="hidden" name="service" value="Fine Jewelry Concierge">
+
+              <div class="form__row form__row--two">
+              <div class="field">
+                <label class="label label--soft" for="j-full_name">Full name</label>
+                <input id="j-full_name" name="full_name" type="text" autocomplete="name" required>
+              </div>
+              <div class="field">
+                <label class="label label--soft" for="j-email">Email address</label>
+                <input id="j-email" name="email" type="email" autocomplete="email" required>
+              </div>
+              </div>
+
+              <div class="form__row form__row--two">
+              <div class="field">
+                <label class="label label--soft" for="j-phone">Phone / WhatsApp</label>
+                <input id="j-phone" name="phone" type="tel" autocomplete="tel" required>
+              </div>
+              <div class="field">
+                <label class="label label--soft" for="j-budget">Anticipated jewelry budget</label>
+                <input id="j-budget" name="budget" type="text" required>
+              </div>
+              </div>
+
+              <div class="field">
+                <label class="label label--soft" for="j-occasion">Occasion or purpose (optional)</label>
+                <select id="j-occasion" name="occasion">
+                  <option value="">Please select</option>
+                  <option>Bridal</option>
+                  <option>A special gift</option>
+                  <option>A personal collection</option>
+                  <option>Other</option>
+                </select>
+              </div>
+
+              <!-- Honeypot: silently catches most bots -->
+              <div class="field" style="position:absolute;left:-9999px" aria-hidden="true">
+                <label for="j-company">Company</label>
+                <input id="j-company" name="_gotcha" type="text" tabindex="-1" autocomplete="off">
+              </div>
+
+              <div class="stack">
+                <p class="form__status label label--soft" role="status" aria-live="polite"></p>
+                <div><button class="btn label" type="submit">Submit inquiry</button></div>
+                <p class="form__note label">The information you provide will be used only to respond to your inquiry.</p>
+              </div>
+            </form>
+          </details>
+        </div>
+      </article>
     </div>
   </section>
 
@@ -208,6 +327,6 @@
   </div>
 </footer>
 
-<script src="assets/js/main.js?v=44" defer></script>
+<script src="assets/js/main.js?v=50" defer></script>
 </body>
 </html>

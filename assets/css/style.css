@@ -582,6 +582,7 @@ body.is-menu-open .drawer__nav a:nth-child(5) { transition-delay: 0.28s; }
   .about__text  { flex: 5 1 0; }
 }
 
+
 /* --------------------------------------------------------------------------
    9. Portfolio grid — asymmetric, magazine-spread
    -------------------------------------------------------------------------- */
@@ -633,7 +634,7 @@ body.is-menu-open .drawer__nav a:nth-child(5) { transition-delay: 0.28s; }
 }
 
 @media (min-width: 60rem) {
-  .service { grid-template-columns: auto 4fr 6fr; }
+  .service { grid-template-columns: 5rem 4fr 6fr; }
 }
 
 .service__list { margin: 0; padding: 0; list-style: none; }
@@ -646,6 +647,55 @@ body.is-menu-open .drawer__nav a:nth-child(5) { transition-delay: 0.28s; }
   font-size: 0.875rem;
   letter-spacing: 0.015em;
 }
+
+/* Concierge services: a ruled row per service. Title left, description and
+   a folded inquiry form right; stacked on small screens. */
+.concierge-item {
+  display: grid;
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+  padding-block: clamp(2.5rem, 6vw, 5rem);
+  border-top: 1px solid var(--rule);
+  align-items: start;
+}
+.concierge-item:last-child { border-bottom: 1px solid var(--rule); }
+.section-head__meta + .concierge-item { border-top: 0; padding-top: 0; }
+
+.concierge-item__body { display: grid; gap: clamp(1.75rem, 3vw, 2.5rem); min-width: 0; }
+
+@media (min-width: 60rem) {
+  .concierge-item { grid-template-columns: 5fr 7fr; gap: clamp(2rem, 5vw, 5rem); }
+}
+
+/* "Inquire about…" opens the form in place */
+.inquire > summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1.15rem 1.5rem;
+  border: 1px solid var(--ink);
+  color: var(--ink);
+  cursor: pointer;
+  list-style: none;
+  transition: background var(--mid) var(--ease), color var(--mid) var(--ease);
+}
+.inquire > summary::-webkit-details-marker { display: none; }
+.inquire > summary:hover,
+.inquire[open] > summary { background: var(--ink); color: var(--white); }
+
+.inquire__icon { position: relative; flex: 0 0 0.75rem; height: 0.75rem; }
+.inquire__icon::before,
+.inquire__icon::after {
+  content: "";
+  position: absolute;
+  background: currentColor;
+  transition: transform var(--mid) var(--ease);
+}
+.inquire__icon::before { left: 0; right: 0; top: 50%; height: 1px; }
+.inquire__icon::after  { top: 0; bottom: 0; left: 50%; width: 1px; }
+.inquire[open] .inquire__icon::after { transform: scaleY(0); }
+
+.inquire .form { margin-top: clamp(2rem, 4vw, 3rem); max-width: none; }
 
 /* --------------------------------------------------------------------------
    11. Forms
