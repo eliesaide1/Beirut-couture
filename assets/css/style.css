@@ -362,6 +362,7 @@ body.is-menu-open .drawer__nav a { opacity: 1; transform: none; }
 body.is-menu-open .drawer__nav a:nth-child(2) { transition-delay: 0.07s; }
 body.is-menu-open .drawer__nav a:nth-child(3) { transition-delay: 0.14s; }
 body.is-menu-open .drawer__nav a:nth-child(4) { transition-delay: 0.21s; }
+body.is-menu-open .drawer__nav a:nth-child(5) { transition-delay: 0.28s; }
 
 /* --------------------------------------------------------------------------
    7. Hero — full bleed film. Type sits over the footage in white, on a scrim
@@ -373,7 +374,7 @@ body.is-menu-open .drawer__nav a:nth-child(4) { transition-delay: 0.21s; }
   display: grid;
   align-items: end;
   overflow: hidden;
-  background: var(--ink);
+  background: var(--white);
 }
 
 .hero__media { position: absolute; inset: 0; }
@@ -409,18 +410,34 @@ body.is-menu-open .drawer__nav a:nth-child(4) { transition-delay: 0.21s; }
   .hero__video { display: none; }
 }
 
-/* darkest where the type sits, barely there across the imagery */
+/* Full-bleed photograph, type over it. The photograph is pale, so a white
+   wash is graded behind the type: strongest where the words sit (left on
+   wide screens, bottom on tall ones) and gone before it reaches the faces. */
 .hero__scrim {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(to top,
-      rgba(0,0,0,0.58) 0%,
-      rgba(0,0,0,0.46) 20%,
-      rgba(0,0,0,0.22) 46%,
-      rgba(0,0,0,0.06) 72%,
-      rgba(0,0,0,0.00) 88%),
-    linear-gradient(to bottom, rgba(0,0,0,0.26) 0%, rgba(0,0,0,0.00) 18%);
+    linear-gradient(to right,
+      rgba(255,255,255,0.92) 0%,
+      rgba(255,255,255,0.80) 22%,
+      rgba(255,255,255,0.45) 38%,
+      rgba(255,255,255,0.00) 56%),
+    linear-gradient(to top, rgba(255,255,255,0.55) 0%, rgba(255,255,255,0.00) 30%),
+    linear-gradient(to bottom, rgba(255,255,255,0.40) 0%, rgba(255,255,255,0.00) 16%);
+}
+
+.hero__media img { object-position: 50% 55%; }
+
+@media (orientation: portrait) {
+  .hero__scrim {
+    background:
+      linear-gradient(to top,
+        rgba(255,255,255,0.94) 0%,
+        rgba(255,255,255,0.86) 26%,
+        rgba(255,255,255,0.50) 40%,
+        rgba(255,255,255,0.00) 54%),
+      linear-gradient(to bottom, rgba(255,255,255,0.40) 0%, rgba(255,255,255,0.00) 14%);
+  }
 }
 
 .hero__body {
@@ -428,25 +445,25 @@ body.is-menu-open .drawer__nav a:nth-child(4) { transition-delay: 0.21s; }
   display: grid;
   justify-items: start;
   gap: 1.4rem;
-  color: var(--white);
+  color: var(--ink);
   padding-top: calc(var(--header-h) + 3rem);
   padding-bottom: clamp(3.5rem, 9vh, 6.5rem);
 }
 
-.hero__body .label { color: rgba(255,255,255,0.86); }
+.hero__body .label { color: var(--ink); }
 
 .hero__title {
   font-size: clamp(2.75rem, 7.5vw, 6.75rem);
   line-height: 1.0;
   letter-spacing: 0.005em;
-  color: var(--white);
+  color: var(--ink);
   margin: 0.3rem 0 0;
 }
 
 .hero__tagline {
   margin: 0.5rem 0 0;
   max-width: 28rem;
-  color: rgba(255,255,255,0.90);
+  color: var(--ink);
 }
 
 .hero__scroll {
@@ -454,14 +471,14 @@ body.is-menu-open .drawer__nav a:nth-child(4) { transition-delay: 0.21s; }
   justify-items: start;
   gap: 0.9rem;
   margin-top: clamp(1.25rem, 3.5vh, 2.5rem);
-  color: rgba(255,255,255,0.86);
+  color: var(--ink-soft);
 }
 
 .hero__scroll span {
   display: block;
   width: 1px;
   height: 3.25rem;
-  background: rgba(255,255,255,0.65);
+  background: var(--ink-soft);
   transform-origin: top;
   animation: draw 2.6s var(--ease) infinite;
 }
@@ -477,9 +494,7 @@ body.is-menu-open .drawer__nav a:nth-child(4) { transition-delay: 0.21s; }
   .header__inner { gap: 0.5rem; }
 }
 
-/* The header floats over the film, so it reads white until it goes solid. */
-.header--overlay:not(.is-solid) { color: var(--white); }
-.header--overlay:not(.is-solid) .nav-toggle span { background: var(--white); }
+/* The header floats over a pale photograph, so it keeps ink type throughout. */
 .header--overlay.is-solid { color: var(--ink); }
 .header--overlay.is-solid .nav-toggle span { background: var(--ink); }
 
