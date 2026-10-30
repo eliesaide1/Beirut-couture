@@ -22,7 +22,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Calibri:ital,wght@0,400;0,700;1,400;1,700&display=swap">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="assets/css/style.css?v=71">
+<link rel="stylesheet" href="assets/css/style.css?v=77">
 
 <script type="application/ld+json">
 {
@@ -54,18 +54,18 @@
 
 <div class="drawer" id="drawer" aria-hidden="true">
   <nav class="drawer__nav" aria-label="Menu">
-    <a href="index.html">Home</a>
-    <a href="concierge.html">Concierge</a>
-    <a href="journal.html">Journal</a>
-    <a href="inquiries.html">Contact</a>
-    <a href="about.html">About</a>
+    <a href="index.html#top">Home</a>
+    <a href="index.html#about">About</a>
+    <a href="index.html#concierge">Concierge</a>
+    <a href="index.html#journal">Journal</a>
+    <a href="index.html#contact">Contact</a>
   </nav>
 </div>
 
 <main id="main">
 
   <!-- Hero -->
-  <section class="hero">
+  <section class="hero" id="top">
     <div class="hero__media">
       <picture>
         <source media="(orientation: portrait)" srcset="assets/img/hero-poster-portrait.jpg">
@@ -78,7 +78,7 @@
   </section>
 
   <!-- Statement -->
-  <section class="section" id="statement">
+  <section class="section" id="about">
     <div class="shell">
       <div class="section-head__meta reveal" style="margin-bottom:clamp(2rem,5vw,3.5rem)"><p class="label label--faint">About</p></div>
       <div class="about">
@@ -116,8 +116,8 @@
         </div>
 
         <figure class="figure about__media reveal" data-delay="1">
-          <div class="figure__frame ratio-4x5">
-            <img src="assets/img/founder.jpg" alt="Christina Iskandar, founder of Beirut Couture, in a pleated pink gown" width="1400" height="1750" loading="lazy" decoding="async">
+          <div class="figure__frame ratio-4x5" data-lightbox="Christina Iskandar · Founder" role="button" tabindex="0" aria-label="View larger: Christina Iskandar · Founder">
+            <img data-full="assets/img/hd/founder.jpg" src="assets/img/founder.jpg" alt="Christina Iskandar, founder of Beirut Couture, in a pleated pink gown" width="1400" height="1750" loading="lazy" decoding="async">
           </div>
           <figcaption class="figure__caption label label--faint">
             <span>Christina Iskandar</span><span>Founder</span>
@@ -355,32 +355,32 @@
 
       <div class="editorial">
         <figure class="figure editorial__item">
-          <div class="figure__frame ratio-tall">
-            <img src="assets/img/editorial/laetitia.jpg" alt="Gown by the window, Banet Beirut editorial" width="1400" height="2099" loading="lazy" decoding="async">
+          <div class="figure__frame ratio-tall" data-lightbox="Banet Beirut x Sara Mrad · Laetitia" role="button" tabindex="0" aria-label="View larger: Banet Beirut x Sara Mrad · Laetitia">
+            <img data-full="assets/img/hd/laetitia.jpg" src="assets/img/editorial/laetitia.jpg" alt="Gown by the window, Banet Beirut editorial" width="1400" height="2099" loading="lazy" decoding="async">
           </div>
           <figcaption class="figure__caption label label--faint"><span>Laetitia</span></figcaption>
         </figure>
         <figure class="figure editorial__item">
-          <div class="figure__frame ratio-tall">
-            <img src="assets/img/editorial/nemat.jpg" alt="Embroidered white jacket, Banet Beirut editorial" width="1400" height="1865" loading="lazy" decoding="async">
+          <div class="figure__frame ratio-tall" data-lightbox="Banet Beirut x Sara Mrad · Nemat" role="button" tabindex="0" aria-label="View larger: Banet Beirut x Sara Mrad · Nemat">
+            <img data-full="assets/img/hd/nemat.jpg" src="assets/img/editorial/nemat.jpg" alt="Embroidered white jacket, Banet Beirut editorial" width="1400" height="1865" loading="lazy" decoding="async">
           </div>
           <figcaption class="figure__caption label label--faint"><span>Nemat</span></figcaption>
         </figure>
         <figure class="figure editorial__item">
-          <div class="figure__frame ratio-tall">
-            <img src="assets/img/editorial/mira.jpg" alt="Black gown on the terrace, Banet Beirut editorial" width="1400" height="2099" loading="lazy" decoding="async">
+          <div class="figure__frame ratio-tall" data-lightbox="Banet Beirut x Sara Mrad · Mira" role="button" tabindex="0" aria-label="View larger: Banet Beirut x Sara Mrad · Mira">
+            <img data-full="assets/img/hd/mira.jpg" src="assets/img/editorial/mira.jpg" alt="Black gown on the terrace, Banet Beirut editorial" width="1400" height="2099" loading="lazy" decoding="async">
           </div>
           <figcaption class="figure__caption label label--faint"><span>Mira</span></figcaption>
         </figure>
         <figure class="figure editorial__item">
-          <div class="figure__frame ratio-tall">
-            <img src="assets/img/editorial/img-6286.jpg" alt="Three women in lilac and ivory in front of a heritage house, Banet Beirut editorial" width="1400" height="2099" loading="lazy" decoding="async">
+          <div class="figure__frame ratio-tall" data-lightbox="Banet Beirut x Sara Mrad · Group" role="button" tabindex="0" aria-label="View larger: Banet Beirut x Sara Mrad · Group">
+            <img data-full="assets/img/hd/img-6286.jpg" src="assets/img/editorial/img-6286.jpg" alt="Three women in lilac and ivory in front of a heritage house, Banet Beirut editorial" width="1400" height="2099" loading="lazy" decoding="async">
           </div>
           <figcaption class="figure__caption label label--faint"><span>Group</span></figcaption>
         </figure>
         <figure class="figure editorial__item">
-          <div class="figure__frame ratio-tall">
-            <img src="assets/img/editorial/farah.jpg" alt="Lilac embroidered gown in a doorway, Banet Beirut editorial" width="1400" height="2099" loading="lazy" decoding="async">
+          <div class="figure__frame ratio-tall" data-lightbox="Banet Beirut x Sara Mrad · Farah" role="button" tabindex="0" aria-label="View larger: Banet Beirut x Sara Mrad · Farah">
+            <img data-full="assets/img/hd/farah.jpg" src="assets/img/editorial/farah.jpg" alt="Lilac embroidered gown in a doorway, Banet Beirut editorial" width="1400" height="2099" loading="lazy" decoding="async">
           </div>
           <figcaption class="figure__caption label label--faint"><span>Farah</span></figcaption>
         </figure>
@@ -400,8 +400,8 @@
         <h3 class="h-md portraits__title reveal">Individual Portraits</h3>
       <article class="about about--portrait">
         <figure class="figure about__media reveal">
-          <div class="figure__frame" style="aspect-ratio:1400/2099">
-            <img src="assets/img/editorial/farah.jpg" alt="A woman in a lilac gown embroidered with a gold sunburst, standing in an open carved wooden doorway" width="1400" height="2099" loading="lazy" decoding="async">
+          <div class="figure__frame" style="aspect-ratio:1400/2099" data-lightbox="Banet Beirut x Sara Mrad · Farah" role="button" tabindex="0" aria-label="View larger: Banet Beirut x Sara Mrad · Farah">
+            <img data-full="assets/img/hd/farah.jpg" src="assets/img/editorial/farah.jpg" alt="A woman in a lilac gown embroidered with a gold sunburst, standing in an open carved wooden doorway" width="1400" height="2099" loading="lazy" decoding="async">
           </div>
           <figcaption class="figure__caption label label--faint"><span>Farah Dagher</span></figcaption>
         </figure>
@@ -420,8 +420,8 @@
 
       <article class="about about--portrait">
         <figure class="figure about__media reveal">
-          <div class="figure__frame" style="aspect-ratio:1400/1865">
-            <img src="assets/img/editorial/nemat.jpg" alt="A woman in a white jacket embroidered with red cherries, gazing out of a window" width="1400" height="1865" loading="lazy" decoding="async">
+          <div class="figure__frame" style="aspect-ratio:1400/1865" data-lightbox="Banet Beirut x Sara Mrad · Nemat" role="button" tabindex="0" aria-label="View larger: Banet Beirut x Sara Mrad · Nemat">
+            <img data-full="assets/img/hd/nemat.jpg" src="assets/img/editorial/nemat.jpg" alt="A woman in a white jacket embroidered with red cherries, gazing out of a window" width="1400" height="1865" loading="lazy" decoding="async">
           </div>
           <figcaption class="figure__caption label label--faint"><span>Nemat Younes</span></figcaption>
         </figure>
@@ -440,8 +440,8 @@
 
       <article class="about about--portrait">
         <figure class="figure about__media reveal">
-          <div class="figure__frame" style="aspect-ratio:1400/2099">
-            <img src="assets/img/editorial/mira.jpg" alt="A woman in a black off-the-shoulder gown standing between pink stone columns above the Lebanese mountains" width="1400" height="2099" loading="lazy" decoding="async">
+          <div class="figure__frame" style="aspect-ratio:1400/2099" data-lightbox="Banet Beirut x Sara Mrad · Mira" role="button" tabindex="0" aria-label="View larger: Banet Beirut x Sara Mrad · Mira">
+            <img data-full="assets/img/hd/mira.jpg" src="assets/img/editorial/mira.jpg" alt="A woman in a black off-the-shoulder gown standing between pink stone columns above the Lebanese mountains" width="1400" height="2099" loading="lazy" decoding="async">
           </div>
           <figcaption class="figure__caption label label--faint"><span>Mira Beydoun</span></figcaption>
         </figure>
@@ -460,8 +460,8 @@
 
       <article class="about about--portrait">
         <figure class="figure about__media reveal">
-          <div class="figure__frame" style="aspect-ratio:1400/2099">
-            <img src="assets/img/editorial/laetitia.jpg" alt="A woman in a silver beaded gown with a thigh-high slit, standing in front of arched stained-glass windows" width="1400" height="2099" loading="lazy" decoding="async">
+          <div class="figure__frame" style="aspect-ratio:1400/2099" data-lightbox="Banet Beirut x Sara Mrad · Laetitia" role="button" tabindex="0" aria-label="View larger: Banet Beirut x Sara Mrad · Laetitia">
+            <img data-full="assets/img/hd/laetitia.jpg" src="assets/img/editorial/laetitia.jpg" alt="A woman in a silver beaded gown with a thigh-high slit, standing in front of arched stained-glass windows" width="1400" height="2099" loading="lazy" decoding="async">
           </div>
           <figcaption class="figure__caption label label--faint"><span>Laetitia Riachi</span></figcaption>
         </figure>
@@ -529,59 +529,59 @@
       <div class="justified-gallery">
         <div class="justified">
           <figure class="figure justified__item" style="--r:0.667">
-            <div class="figure__frame" style="aspect-ratio:1400/2099">
-              <img src="assets/img/memories/memories-01.jpg" alt="Three women in couture seated and lying among white drapery, a backgammon board in the foreground, black-and-white photographs behind them" width="1400" height="2099" loading="lazy" decoding="async">
+            <div class="figure__frame" style="aspect-ratio:1400/2099" data-lightbox="Lebanese Memories x Rami Kadi" role="button" tabindex="0" aria-label="View larger: Lebanese Memories x Rami Kadi">
+              <img data-full="assets/img/hd/memories-01.jpg" src="assets/img/memories/memories-01.jpg" alt="Three women in couture seated and lying among white drapery, a backgammon board in the foreground, black-and-white photographs behind them" width="1400" height="2099" loading="lazy" decoding="async">
             </div>
           </figure>
           <figure class="figure justified__item" style="--r:0.75">
-            <div class="figure__frame" style="aspect-ratio:1400/1868">
-              <img src="assets/img/memories/memories-02.jpg" alt="Two women in couture standing, one holding a paper cup to her ear, in front of a black-and-white photograph" width="1400" height="1868" loading="lazy" decoding="async">
+            <div class="figure__frame" style="aspect-ratio:1400/1868" data-lightbox="Lebanese Memories x Rami Kadi" role="button" tabindex="0" aria-label="View larger: Lebanese Memories x Rami Kadi">
+              <img data-full="assets/img/hd/memories-02.jpg" src="assets/img/memories/memories-02.jpg" alt="Two women in couture standing, one holding a paper cup to her ear, in front of a black-and-white photograph" width="1400" height="1868" loading="lazy" decoding="async">
             </div>
           </figure>
           <figure class="figure justified__item" style="--r:0.667">
-            <div class="figure__frame" style="aspect-ratio:1400/2099">
-              <img src="assets/img/memories/memories-03.jpg" alt="A woman in a pale green beaded gown holding a paper cup telephone in front of a black-and-white photograph" width="1400" height="2099" loading="lazy" decoding="async">
+            <div class="figure__frame" style="aspect-ratio:1400/2099" data-lightbox="Lebanese Memories x Rami Kadi" role="button" tabindex="0" aria-label="View larger: Lebanese Memories x Rami Kadi">
+              <img data-full="assets/img/hd/memories-03.jpg" src="assets/img/memories/memories-03.jpg" alt="A woman in a pale green beaded gown holding a paper cup telephone in front of a black-and-white photograph" width="1400" height="2099" loading="lazy" decoding="async">
             </div>
           </figure>
         </div>
         <div class="justified">
           <figure class="figure justified__item" style="--r:1.5">
-            <div class="figure__frame" style="aspect-ratio:1600/1067">
-              <img src="assets/img/memories/memories-04.jpg" alt="Three women in couture seated on the floor among drapery and sweets, seen from above" width="1600" height="1067" loading="lazy" decoding="async">
+            <div class="figure__frame" style="aspect-ratio:1600/1067" data-lightbox="Lebanese Memories x Rami Kadi" role="button" tabindex="0" aria-label="View larger: Lebanese Memories x Rami Kadi">
+              <img data-full="assets/img/hd/memories-04.jpg" src="assets/img/memories/memories-04.jpg" alt="Three women in couture seated on the floor among drapery and sweets, seen from above" width="1600" height="1067" loading="lazy" decoding="async">
             </div>
           </figure>
         </div>
         <div class="justified">
           <figure class="figure justified__item" style="--r:0.667">
-            <div class="figure__frame" style="aspect-ratio:1400/2100">
-              <img src="assets/img/nayla/nayla-01.jpg" alt="A woman in a sequinned tweed jacket resting her chin on her hand, with the city behind her" width="1400" height="2100" loading="lazy" decoding="async">
+            <div class="figure__frame" style="aspect-ratio:1400/2100" data-lightbox="Lebanese Memories x Rami Kadi" role="button" tabindex="0" aria-label="View larger: Lebanese Memories x Rami Kadi">
+              <img data-full="assets/img/hd/nayla-01.jpg" src="assets/img/nayla/nayla-01.jpg" alt="A woman in a sequinned tweed jacket resting her chin on her hand, with the city behind her" width="1400" height="2100" loading="lazy" decoding="async">
             </div>
           </figure>
           <figure class="figure justified__item" style="--r:0.667">
-            <div class="figure__frame" style="aspect-ratio:1400/2100">
-              <img src="assets/img/nayla/nayla-02.jpg" alt="A woman in a black gown seated among stacks of newspapers against a wood-panelled wall" width="1400" height="2100" loading="lazy" decoding="async">
+            <div class="figure__frame" style="aspect-ratio:1400/2100" data-lightbox="Lebanese Memories x Rami Kadi" role="button" tabindex="0" aria-label="View larger: Lebanese Memories x Rami Kadi">
+              <img data-full="assets/img/hd/nayla-02.jpg" src="assets/img/nayla/nayla-02.jpg" alt="A woman in a black gown seated among stacks of newspapers against a wood-panelled wall" width="1400" height="2100" loading="lazy" decoding="async">
             </div>
           </figure>
           <figure class="figure justified__item" style="--r:0.667">
-            <div class="figure__frame" style="aspect-ratio:1400/2100">
-              <img src="assets/img/nayla/nayla-03.jpg" alt="A woman in black holding a ceramic rooster to her face" width="1400" height="2100" loading="lazy" decoding="async">
+            <div class="figure__frame" style="aspect-ratio:1400/2100" data-lightbox="Lebanese Memories x Rami Kadi" role="button" tabindex="0" aria-label="View larger: Lebanese Memories x Rami Kadi">
+              <img data-full="assets/img/hd/nayla-03.jpg" src="assets/img/nayla/nayla-03.jpg" alt="A woman in black holding a ceramic rooster to her face" width="1400" height="2100" loading="lazy" decoding="async">
             </div>
           </figure>
         </div>
         <div class="justified">
           <figure class="figure justified__item" style="--r:0.667">
-            <div class="figure__frame" style="aspect-ratio:1400/2100">
-              <img src="assets/img/nayla/nayla-04.jpg" alt="A woman in a black off-the-shoulder gown holding a ceramic rooster and a silver clutch" width="1400" height="2100" loading="lazy" decoding="async">
+            <div class="figure__frame" style="aspect-ratio:1400/2100" data-lightbox="Lebanese Memories x Rami Kadi" role="button" tabindex="0" aria-label="View larger: Lebanese Memories x Rami Kadi">
+              <img data-full="assets/img/hd/nayla-04.jpg" src="assets/img/nayla/nayla-04.jpg" alt="A woman in a black off-the-shoulder gown holding a ceramic rooster and a silver clutch" width="1400" height="2100" loading="lazy" decoding="async">
             </div>
           </figure>
           <figure class="figure justified__item" style="--r:0.667">
-            <div class="figure__frame" style="aspect-ratio:1400/2100">
-              <img src="assets/img/nayla/nayla-05.jpg" alt="A woman in a silver-grey sparkling gown standing in front of a painted mural" width="1400" height="2100" loading="lazy" decoding="async">
+            <div class="figure__frame" style="aspect-ratio:1400/2100" data-lightbox="Lebanese Memories x Rami Kadi" role="button" tabindex="0" aria-label="View larger: Lebanese Memories x Rami Kadi">
+              <img data-full="assets/img/hd/nayla-05.jpg" src="assets/img/nayla/nayla-05.jpg" alt="A woman in a silver-grey sparkling gown standing in front of a painted mural" width="1400" height="2100" loading="lazy" decoding="async">
             </div>
           </figure>
           <figure class="figure justified__item" style="--r:0.667">
-            <div class="figure__frame" style="aspect-ratio:1400/2100">
-              <img src="assets/img/nayla/nayla-06.jpg" alt="A woman in a grey gown at the end of a long office corridor" width="1400" height="2100" loading="lazy" decoding="async">
+            <div class="figure__frame" style="aspect-ratio:1400/2100" data-lightbox="Lebanese Memories x Rami Kadi" role="button" tabindex="0" aria-label="View larger: Lebanese Memories x Rami Kadi">
+              <img data-full="assets/img/hd/nayla-06.jpg" src="assets/img/nayla/nayla-06.jpg" alt="A woman in a grey gown at the end of a long office corridor" width="1400" height="2100" loading="lazy" decoding="async">
             </div>
           </figure>
         </div>
@@ -629,8 +629,8 @@
         </div>
         <div class="about__media reveal" data-delay="1">
         <figure class="figure reveal">
-          <div class="figure__frame ratio-square">
-            <img src="assets/img/muses/muses-group.jpg" alt="Seven women in couture gathered in a white panelled room, some seated, some standing" width="1400" height="1400" loading="lazy" decoding="async">
+          <div class="figure__frame ratio-square" data-lightbox="Beirut Couture Muses" role="button" tabindex="0" aria-label="View larger: Beirut Couture Muses">
+            <img data-full="assets/img/hd/muses-group.jpg" src="assets/img/muses/muses-group.jpg" alt="Seven women in couture gathered in a white panelled room, some seated, some standing" width="1400" height="1400" loading="lazy" decoding="async">
           </div>
         </figure>
           <div class="credits reveal">
@@ -652,8 +652,8 @@
         <h3 class="h-md portraits__title reveal">Individual Portraits</h3>
       <article class="about about--portrait portrait-row">
         <figure class="figure about__media reveal">
-          <div class="figure__frame ratio-tall">
-            <img src="assets/img/muses/marijo.jpg" alt="A woman in a pale blue gown with flutter sleeves standing on a round white plinth against a white panelled wall" width="1400" height="2099" loading="lazy" decoding="async">
+          <div class="figure__frame ratio-tall" data-lightbox="Beirut Couture Muses · Marijo Samneh" role="button" tabindex="0" aria-label="View larger: Beirut Couture Muses · Marijo Samneh">
+            <img data-full="assets/img/hd/marijo.jpg" src="assets/img/muses/marijo.jpg" alt="A woman in a pale blue gown with flutter sleeves standing on a round white plinth against a white panelled wall" width="1400" height="2099" loading="lazy" decoding="async">
           </div>
           <figcaption class="figure__caption label label--faint"><span>Marijo Samneh</span></figcaption>
         </figure>
@@ -671,8 +671,8 @@
 
       <article class="about about--portrait portrait-row">
         <figure class="figure about__media reveal">
-          <div class="figure__frame ratio-tall">
-            <img src="assets/img/muses/carla.jpg" alt="A woman in a sheer ivory tulle gown leaning forward, seated against a white panelled wall" width="1400" height="2099" loading="lazy" decoding="async">
+          <div class="figure__frame ratio-tall" data-lightbox="Beirut Couture Muses · Carla Chamoun" role="button" tabindex="0" aria-label="View larger: Beirut Couture Muses · Carla Chamoun">
+            <img data-full="assets/img/hd/carla.jpg" src="assets/img/muses/carla.jpg" alt="A woman in a sheer ivory tulle gown leaning forward, seated against a white panelled wall" width="1400" height="2099" loading="lazy" decoding="async">
           </div>
           <figcaption class="figure__caption label label--faint"><span>Carla Chamoun</span></figcaption>
         </figure>
@@ -691,8 +691,8 @@
 
       <article class="about about--portrait portrait-row">
         <figure class="figure about__media reveal">
-          <div class="figure__frame ratio-tall">
-            <img src="assets/img/muses/salwa.jpg" alt="A woman in a white sculpted gown standing on a round white plinth against a white panelled wall" width="1400" height="2099" loading="lazy" decoding="async">
+          <div class="figure__frame ratio-tall" data-lightbox="Beirut Couture Muses · Salwa Chalhoub" role="button" tabindex="0" aria-label="View larger: Beirut Couture Muses · Salwa Chalhoub">
+            <img data-full="assets/img/hd/salwa.jpg" src="assets/img/muses/salwa.jpg" alt="A woman in a white sculpted gown standing on a round white plinth against a white panelled wall" width="1400" height="2099" loading="lazy" decoding="async">
           </div>
           <figcaption class="figure__caption label label--faint"><span>Salwa Chalhoub</span></figcaption>
         </figure>
@@ -711,8 +711,8 @@
 
       <article class="about about--portrait portrait-row">
         <figure class="figure about__media reveal">
-          <div class="figure__frame ratio-tall">
-            <img src="assets/img/muses/lilia.jpg" alt="A woman in a camel wool coat with wide sleeves, photographed in profile against a white panelled wall" width="1400" height="2099" loading="lazy" decoding="async">
+          <div class="figure__frame ratio-tall" data-lightbox="Beirut Couture Muses · Lilia Sabbagh" role="button" tabindex="0" aria-label="View larger: Beirut Couture Muses · Lilia Sabbagh">
+            <img data-full="assets/img/hd/lilia.jpg" src="assets/img/muses/lilia.jpg" alt="A woman in a camel wool coat with wide sleeves, photographed in profile against a white panelled wall" width="1400" height="2099" loading="lazy" decoding="async">
           </div>
           <figcaption class="figure__caption label label--faint"><span>Lilia Sabbagh</span></figcaption>
         </figure>
@@ -734,7 +734,20 @@
 
 </main>
 
-<footer class="footer">
+<div class="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Image viewer">
+  <div class="lightbox__bar">
+    <p class="label label--faint" data-lightbox-counter></p>
+    <button class="label" type="button" data-lightbox-close>Close</button>
+  </div>
+  <div class="lightbox__stage"></div>
+  <div class="lightbox__foot">
+    <button class="label link link--reveal" type="button" data-lightbox-prev>Previous</button>
+    <p class="label label--faint" data-lightbox-caption></p>
+    <button class="label link link--reveal" type="button" data-lightbox-next>Next</button>
+  </div>
+</div>
+
+<footer class="footer" id="contact">
   <div class="shell">
     <div class="footer__grid">
       <div class="footer__col">
@@ -742,10 +755,10 @@
       </div>
       <div class="footer__col">
         <p class="label label--faint">Maison</p>
-        <a class="label" href="index.html">Home</a>
-        <a class="label" href="about.html">About</a>
-        <a class="label" href="concierge.html">Concierge</a>
-        <a class="label" href="journal.html">Journal</a>
+        <a class="label" href="index.html#top">Home</a>
+        <a class="label" href="index.html#about">About</a>
+        <a class="label" href="index.html#concierge">Concierge</a>
+        <a class="label" href="index.html#journal">Journal</a>
       </div>
       <div class="footer__col">
         <p class="label label--faint">Collections</p>
@@ -767,6 +780,6 @@
   </div>
 </footer>
 
-<script src="assets/js/main.js?v=71" defer></script>
+<script src="assets/js/main.js?v=77" defer></script>
 </body>
 </html>

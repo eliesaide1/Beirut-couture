@@ -146,7 +146,19 @@
     });
 
     drawer.addEventListener('click', function (e) {
-      if (e.target.closest('a')) setMenu(false);
+      var link = e.target.closest('a');
+      if (!link) return;
+      setMenu(false);
+
+      /* On the home page, menu links to its own sections scroll in place
+         instead of reloading it. From any other page they navigate normally. */
+      var m = /^index\.html#(.+)$/.exec(link.getAttribute('href') || '');
+      var target = m && document.getElementById('top') && document.getElementById(m[1]);
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView();
+        if (history.pushState) history.pushState(null, '', '#' + m[1]);
+      }
     });
 
     document.addEventListener('keydown', function (e) {
@@ -249,6 +261,13 @@
     document.addEventListener('click', function (e) {
       var trigger = e.target.closest('[data-lightbox]');
       if (trigger) { e.preventDefault(); open(trigger); }
+    });
+
+    /* Photographs are div[role=button]: Enter or Space opens them too. */
+    document.addEventListener('keydown', function (e) {
+      if (e.key !== 'Enter' && e.key !== ' ') return;
+      var t = e.target.closest && e.target.closest('div[data-lightbox][role="button"]');
+      if (t && !box.classList.contains('is-open')) { e.preventDefault(); open(t); }
     });
 
     box.addEventListener('click', function (e) {

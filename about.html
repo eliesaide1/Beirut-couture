@@ -21,7 +21,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Calibri:ital,wght@0,400;0,700;1,400;1,700&display=swap">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="assets/css/style.css?v=71">
+<link rel="stylesheet" href="assets/css/style.css?v=77">
 
 <script type="application/ld+json">
 {
@@ -54,11 +54,11 @@
 
 <div class="drawer" id="drawer" aria-hidden="true">
   <nav class="drawer__nav" aria-label="Menu">
-    <a href="index.html">Home</a>
-    <a href="concierge.html">Concierge</a>
-    <a href="journal.html">Journal</a>
-    <a href="inquiries.html">Contact</a>
-    <a href="about.html">About</a>
+    <a href="index.html#top">Home</a>
+    <a href="index.html#about">About</a>
+    <a href="index.html#concierge">Concierge</a>
+    <a href="index.html#journal">Journal</a>
+    <a href="index.html#contact">Contact</a>
   </nav>
 </div>
 
@@ -93,8 +93,8 @@
 
       <div class="split split--wide-text" style="margin-top:clamp(2rem,4vw,3.5rem);align-items:start">
         <figure class="figure reveal">
-          <div class="figure__frame ratio-4x5">
-            <img src="assets/img/founder.jpg" alt="Christina Iskandar, founder of Beirut Couture, in a pleated pink gown" width="1400" height="1750" loading="lazy" decoding="async">
+          <div class="figure__frame ratio-4x5" data-lightbox="Christina Iskandar · Founder" role="button" tabindex="0" aria-label="View larger: Christina Iskandar · Founder">
+            <img data-full="assets/img/hd/founder.jpg" src="assets/img/founder.jpg" alt="Christina Iskandar, founder of Beirut Couture, in a pleated pink gown" width="1400" height="1750" loading="lazy" decoding="async">
           </div>
           <figcaption class="figure__caption label label--faint">
             <span>The Founder</span><span>Beirut</span>
@@ -116,7 +116,20 @@
 
 </main>
 
-<footer class="footer">
+<div class="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Image viewer">
+  <div class="lightbox__bar">
+    <p class="label label--faint" data-lightbox-counter></p>
+    <button class="label" type="button" data-lightbox-close>Close</button>
+  </div>
+  <div class="lightbox__stage"></div>
+  <div class="lightbox__foot">
+    <button class="label link link--reveal" type="button" data-lightbox-prev>Previous</button>
+    <p class="label label--faint" data-lightbox-caption></p>
+    <button class="label link link--reveal" type="button" data-lightbox-next>Next</button>
+  </div>
+</div>
+
+<footer class="footer" id="contact">
   <div class="shell">
     <div class="footer__grid">
       <div class="footer__col">
@@ -124,10 +137,10 @@
       </div>
       <div class="footer__col">
         <p class="label label--faint">Maison</p>
-        <a class="label" href="index.html">Home</a>
-        <a class="label" href="about.html">About</a>
-        <a class="label" href="concierge.html">Concierge</a>
-        <a class="label" href="journal.html">Journal</a>
+        <a class="label" href="index.html#top">Home</a>
+        <a class="label" href="index.html#about">About</a>
+        <a class="label" href="index.html#concierge">Concierge</a>
+        <a class="label" href="index.html#journal">Journal</a>
       </div>
       <div class="footer__col">
         <p class="label label--faint">Collections</p>
@@ -149,6 +162,6 @@
   </div>
 </footer>
 
-<script src="assets/js/main.js?v=71" defer></script>
+<script src="assets/js/main.js?v=77" defer></script>
 </body>
 </html>
