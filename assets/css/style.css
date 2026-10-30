@@ -148,6 +148,13 @@ h1, h2, h3, h4 {
 }
 .body-copy p + p { margin-top: 1.4em; }
 
+/* Larger reading size for the About text */
+.body-copy--lg {
+  font-size: clamp(1rem, 1.45vw, 1.45rem);
+  line-height: 1.75;
+  max-width: 40rem;
+}
+
 /* Numeral used as an editorial device */
 .numeral {
   font-family: var(--display);
@@ -532,6 +539,7 @@ body.is-menu-open .drawer__nav a:nth-child(5) { transition-delay: 0.28s; }
 .ratio-tall      { aspect-ratio: 2 / 3; }
 .ratio-landscape { aspect-ratio: 4 / 3; }
 .ratio-square    { aspect-ratio: 1 / 1; }
+.ratio-4x5       { aspect-ratio: 4 / 5; }
 .ratio-film      { aspect-ratio: 3 / 2; }   /* the film is 2730 x 1440; cover crops its sides a little */
 
 .figure__frame video {
@@ -542,21 +550,36 @@ body.is-menu-open .drawer__nav a:nth-child(5) { transition-delay: 0.28s; }
   background: var(--ink);
 }
 
-.ratio-portrait img, .ratio-tall img, .ratio-landscape img, .ratio-square img {
+.ratio-4x5 img, .ratio-portrait img, .ratio-tall img, .ratio-landscape img, .ratio-square img {
   height: 100%;
   object-fit: cover;
 }
 
-/* Stand-in until the real portrait is supplied */
-.figure__placeholder {
-  display: grid;
-  place-content: center;
-  justify-items: center;
-  gap: 1.25rem;
-  text-align: center;
-  padding: 2rem;
-  background: var(--paper);
-  border: 1px solid var(--rule);
+/* Home "About": flexbox. Stacked on small screens (text, then film). From
+   60rem it becomes a row — film left, text right — and the text column is
+   stretched to the film's height, with the link pinned to the bottom edge. */
+.about {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(2rem, 5vw, 5rem);
+}
+
+.about__text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2.5rem;
+  min-width: 0;
+}
+
+.about__text .link { align-self: flex-start; }
+.about__media { min-width: 0; }
+.about + .about { margin-top: clamp(2.5rem, 5vw, 5rem); }
+
+@media (min-width: 60rem) {
+  .about { flex-direction: row; align-items: stretch; }
+  .about__media { order: -1; flex: 6 1 0; }
+  .about__text  { flex: 5 1 0; }
 }
 
 /* --------------------------------------------------------------------------
