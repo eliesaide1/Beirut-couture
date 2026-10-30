@@ -331,6 +331,42 @@
     });
   });
 
+  /* ---- Concierge tabs --------------------------------------------------- *
+   * One service at a time, with its photograph. Arrow keys move between
+   * tabs; #bridal / #couture / #jewelry in the URL open that tab.
+   * ---------------------------------------------------------------------- */
+  Array.prototype.forEach.call(document.querySelectorAll('[data-tabs]'), function (root) {
+    var tabs   = Array.prototype.slice.call(root.querySelectorAll('[role="tab"]'));
+    var panels = Array.prototype.slice.call(root.querySelectorAll('[role="tabpanel"]'));
+    var photos = Array.prototype.slice.call(root.querySelectorAll('[data-tab-photo]'));
+
+    var show = function (id, focus) {
+      tabs.forEach(function (t) {
+        var on = t.dataset.tab === id;
+        t.setAttribute('aria-selected', String(on));
+        t.tabIndex = on ? 0 : -1;
+        if (on && focus) t.focus();
+      });
+      panels.forEach(function (p) { p.hidden = p.id !== 'panel-' + id; });
+      photos.forEach(function (p) { p.classList.toggle('is-active', p.dataset.tabPhoto === id); });
+    };
+
+    root.classList.add('is-ready');
+    tabs.forEach(function (t, i) {
+      t.addEventListener('click', function () { show(t.dataset.tab); });
+      t.addEventListener('keydown', function (e) {
+        var to = e.key === 'ArrowRight' ? i + 1 : e.key === 'ArrowLeft' ? i - 1
+               : e.key === 'Home' ? 0 : e.key === 'End' ? tabs.length - 1 : null;
+        if (to === null) return;
+        e.preventDefault();
+        show(tabs[(to + tabs.length) % tabs.length].dataset.tab, true);
+      });
+    });
+
+    var fromHash = (location.hash || '').replace('#', '');
+    show(tabs.some(function (t) { return t.dataset.tab === fromHash; }) ? fromHash : tabs[0].dataset.tab);
+  });
+
   /* ---- Mark current page in nav ---------------------------------------- */
   var here = location.pathname.split('/').pop() || 'index.html';
   document.querySelectorAll('.drawer__nav a').forEach(function (a) {

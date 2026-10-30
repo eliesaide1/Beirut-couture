@@ -21,7 +21,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Calibri:ital,wght@0,400;0,700;1,400;1,700&display=swap">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="assets/css/style.css?v=50">
+<link rel="stylesheet" href="assets/css/style.css?v=53">
 
 <script type="application/ld+json">
 {
@@ -69,15 +69,29 @@
     <div class="shell">
       <div class="section-head__meta reveal" style="margin-bottom:clamp(2.5rem,6vw,4.5rem)"><p class="label label--faint">Concierge</p></div>
 
-      <article class="concierge-item reveal" id="bridal">
-        <h2 class="h-lg">Bridal Concierge</h2>
-        <div class="concierge-item__body">
-          <div class="body-copy body-copy--lg">
-            <p>A discreet, highly personalized service for brides seeking an exceptional wedding wardrobe, curated around their style and vision. From private appointments with reputable Lebanese designers to fittings, fine jewelry and multiple looks, every detail is considered with a focus on exceptional craftsmanship and personal attention.</p>
-            <p>Offering a trusted point of contact throughout the journey, the Bridal Concierge provides access to a considered selection of Lebanese couture, prêt-à-porter and fine jewelry. Available to a limited number of brides each wedding season, by inquiry.</p>
+      <div class="tabs reveal" data-tabs>
+        <div class="tabs__media">
+          <div class="figure__frame ratio-4x5">
+            <img class="tabs__photo is-active" data-tab-photo="bridal" src="assets/img/work-02.jpg" alt="Ivory lace gown worn on the slopes of the Lebanese mountains" width="1042" height="1280" decoding="async">
+            <img class="tabs__photo" data-tab-photo="couture" src="assets/img/service-couture.jpg" alt="Deep red gown with a long embroidered train" width="1072" height="1280" loading="lazy" decoding="async">
+            <img class="tabs__photo" data-tab-photo="jewelry" src="assets/img/service-jewelry.jpg" alt="Pendant with a carved stone set in gold, held in the hand" width="1068" height="1159" loading="lazy" decoding="async">
           </div>
-          <details class="inquire">
-            <summary class="label">Inquire about the Bridal Concierge<span class="inquire__icon" aria-hidden="true"></span></summary>
+        </div>
+        <div class="tabs__main">
+          <div class="tabs__list" role="tablist" aria-label="Concierge services">
+          <button class="tabs__tab label" role="tab" type="button" id="tab-bridal" aria-controls="panel-bridal" aria-selected="true" tabindex="0" data-tab="bridal">Bridal</button>
+          <button class="tabs__tab label" role="tab" type="button" id="tab-couture" aria-controls="panel-couture" aria-selected="false" tabindex="-1" data-tab="couture">Couture</button>
+          <button class="tabs__tab label" role="tab" type="button" id="tab-jewelry" aria-controls="panel-jewelry" aria-selected="false" tabindex="-1" data-tab="jewelry">Fine Jewelry</button>
+          </div>
+          <div class="tabs__panel" role="tabpanel" id="panel-bridal" aria-labelledby="tab-bridal">
+            <div class="stack--loose">
+              <h2 class="h-lg">Bridal Concierge</h2>
+              <div class="body-copy">
+              <p>A discreet, highly personalized service for brides seeking an exceptional wedding wardrobe, curated around their style and vision. From private appointments with reputable Lebanese designers to fittings, fine jewelry and multiple looks, every detail is considered with a focus on exceptional craftsmanship and personal attention.</p>
+              <p>Offering a trusted point of contact throughout the journey, the Bridal Concierge provides access to a considered selection of Lebanese couture, prêt-à-porter and fine jewelry. Available to a limited number of brides each wedding season, by inquiry.</p>
+              </div>
+              <div class="stack">
+                <h3 class="h-md">Inquire about the Bridal Concierge</h3>
             <form class="form" data-inquiry-form
                   action="REPLACE_WITH_YOUR_FORM_ENDPOINT" method="POST" novalidate>
               <input type="hidden" name="service" value="Bridal Concierge">
@@ -142,18 +156,17 @@
                 <p class="form__note label">The information you provide will be used only to respond to your inquiry.</p>
               </div>
             </form>
-          </details>
-        </div>
-      </article>
-
-      <article class="concierge-item reveal" id="couture">
-        <h2 class="h-lg">Couture Concierge</h2>
-        <div class="concierge-item__body">
-          <div class="body-copy body-copy--lg">
-            <p>A personalized service connecting clients with exceptional Lebanese couture, from discovering the right Lebanese designers and creations to coordinating private appointments and bespoke requests.</p>
+              </div>
+            </div>
           </div>
-          <details class="inquire">
-            <summary class="label">Inquire about the Couture Concierge<span class="inquire__icon" aria-hidden="true"></span></summary>
+          <div class="tabs__panel" role="tabpanel" id="panel-couture" aria-labelledby="tab-couture">
+            <div class="stack--loose">
+              <h2 class="h-lg">Couture Concierge</h2>
+              <div class="body-copy">
+              <p>A personalized service connecting clients with exceptional Lebanese couture, from discovering the right Lebanese designers and creations to coordinating private appointments and bespoke requests.</p>
+              </div>
+              <div class="stack">
+                <h3 class="h-md">Inquire about the Couture Concierge</h3>
             <form class="form" data-inquiry-form
                   action="REPLACE_WITH_YOUR_FORM_ENDPOINT" method="POST" novalidate>
               <input type="hidden" name="service" value="Couture Concierge">
@@ -203,18 +216,17 @@
                 <p class="form__note label">The information you provide will be used only to respond to your inquiry.</p>
               </div>
             </form>
-          </details>
-        </div>
-      </article>
-
-      <article class="concierge-item reveal" id="jewelry">
-        <h2 class="h-lg">Fine Jewelry Concierge</h2>
-        <div class="concierge-item__body">
-          <div class="body-copy body-copy--lg">
-            <p>A personalized introduction to unique and exceptional Lebanese fine jewelry, connecting clients with Lebanese jewelry designers and helping them discover pieces suited to their taste, occasion and/or collection.</p>
+              </div>
+            </div>
           </div>
-          <details class="inquire">
-            <summary class="label">Inquire about the Jewelry Concierge<span class="inquire__icon" aria-hidden="true"></span></summary>
+          <div class="tabs__panel" role="tabpanel" id="panel-jewelry" aria-labelledby="tab-jewelry">
+            <div class="stack--loose">
+              <h2 class="h-lg">Fine Jewelry Concierge</h2>
+              <div class="body-copy">
+              <p>A personalized introduction to unique and exceptional Lebanese fine jewelry, connecting clients with Lebanese jewelry designers and helping them discover pieces suited to their taste, occasion and/or collection.</p>
+              </div>
+              <div class="stack">
+                <h3 class="h-md">Inquire about the Jewelry Concierge</h3>
             <form class="form" data-inquiry-form
                   action="REPLACE_WITH_YOUR_FORM_ENDPOINT" method="POST" novalidate>
               <input type="hidden" name="service" value="Fine Jewelry Concierge">
@@ -264,9 +276,11 @@
                 <p class="form__note label">The information you provide will be used only to respond to your inquiry.</p>
               </div>
             </form>
-          </details>
+              </div>
+            </div>
+          </div>
         </div>
-      </article>
+      </div>
     </div>
   </section>
 
@@ -327,6 +341,6 @@
   </div>
 </footer>
 
-<script src="assets/js/main.js?v=50" defer></script>
+<script src="assets/js/main.js?v=53" defer></script>
 </body>
 </html>
