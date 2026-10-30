@@ -12,3 +12,6 @@
 # local
 node_modules/
 *.log
+
+# full-size originals (too large for git; the site uses the compressed copies in assets/)
+_originals/

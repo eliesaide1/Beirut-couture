@@ -111,11 +111,12 @@
    * downloads nor runs before it is seen. Reduced-motion readers get the
    * poster and the controls instead. Without JS the controls still work.
    * ---------------------------------------------------------------------- */
-  var film = document.querySelector('video[data-autoplay]');
-  if (film && 'IntersectionObserver' in window &&
+  var films = document.querySelectorAll('video[data-autoplay]');
+  if (films.length && 'IntersectionObserver' in window &&
       !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    new IntersectionObserver(function (entries) {
+    var filmObserver = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
+        var film = e.target;
         if (e.isIntersecting) {
           var go = film.play();
           if (go && go.catch) go.catch(function () { /* blocked — poster and controls stand */ });
@@ -123,7 +124,8 @@
           film.pause();
         }
       });
-    }, { threshold: 0.35 }).observe(film);
+    }, { threshold: 0.35 });
+    Array.prototype.forEach.call(films, function (film) { filmObserver.observe(film); });
   }
 
   /* ---- Mobile drawer ---------------------------------------------------- */

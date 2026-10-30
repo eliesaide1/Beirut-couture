@@ -574,6 +574,89 @@ body.is-menu-open .drawer__nav a:nth-child(5) { transition-delay: 0.28s; }
 
 .gallery__item[hidden] { display: none; }
 
+/* Editorial: five photographs in a flexbox row that re-flows with the screen,
+   no sideways scrolling. 5 across on wide screens, 3 on tablets, 2 on phones;
+   the leftover photographs sit left-aligned at the same size. Title, photos
+   and text all share one column, so their left edges line up. */
+.editorial {
+  --gap: clamp(1rem, 2vw, 2rem);
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(2rem, 4vw, 3rem) var(--gap);
+}
+.editorial__item { flex: 0 0 calc((100% - var(--gap)) / 2); min-width: 0; }
+
+@media (min-width: 40rem) {
+  .editorial__item { flex-basis: calc((100% - 2 * var(--gap)) / 3); }
+}
+@media (min-width: 64rem) {
+  .editorial__item { flex-basis: calc((100% - 4 * var(--gap)) / 5); }
+}
+
+.editorial__title {
+  letter-spacing: 0.08em;
+  margin-bottom: clamp(2rem, 5vw, 3.5rem);
+}
+
+/* The text runs the full width of the column, under the photographs */
+.editorial__text {
+  max-width: none;
+  margin-top: clamp(2.5rem, 6vw, 4.5rem);
+}
+
+/* Individual portraits: a name and a full-width text, ruled apart */
+.portraits { margin-top: clamp(4rem, 9vw, 7rem); }
+.portraits__title { margin-bottom: clamp(2rem, 5vw, 3.5rem); }
+.portrait { padding-top: clamp(2rem, 4vw, 3rem); border-top: 1px solid var(--rule); }
+.portrait + .portrait { margin-top: clamp(2rem, 4vw, 3rem); }
+.portrait .editorial__text { margin-top: clamp(1.25rem, 2.5vw, 2rem); }
+
+/* A portrait beside its text: the photograph takes less of the row than the film does */
+@media (min-width: 60rem) {
+  .about--portrait .about__media { flex: 4 1 0; }
+  .about--portrait .about__text  { flex: 7 1 0; }
+}
+.portraits .about--portrait { padding-top: clamp(2rem, 4vw, 3rem); border-top: 1px solid var(--rule); }
+.portraits .about--portrait + .about--portrait { margin-top: clamp(2rem, 4vw, 3rem); }
+.credits dd { line-height: 1.8; }
+.about__media .credits { margin-top: clamp(2.5rem, 5vw, 3.5rem); }
+
+/* Justified gallery: photographs of different shapes share a row at one
+   height (each grows in proportion to its aspect ratio). Stacks on phones. */
+.justified-gallery { display: grid; gap: clamp(1rem, 2vw, 2rem); }
+.justified { display: flex; gap: clamp(1rem, 2vw, 2rem); }
+.justified__item { flex: var(--r) 1 0; min-width: 0; }
+.justified__item .figure__frame img { width: 100%; height: 100%; object-fit: cover; }
+
+@media (max-width: 39.99rem) {
+  .justified { flex-direction: column; }
+  .justified__item { flex: none; }
+}
+
+/* A single line set large and centred, ahead of the text (Arabic, so right-to-left) */
+.pullquote {
+  margin: clamp(3rem, 7vw, 5rem) auto 0;
+  max-width: 48rem;
+  text-align: center;
+  font-size: clamp(1.6rem, 3.4vw, 2.6rem);
+  line-height: 1.6;
+  color: var(--ink);
+}
+
+/* Creative credits: a label and its value per line */
+.credits { margin-top: clamp(3rem, 7vw, 5rem); }
+.credits dl { margin: clamp(1.25rem, 2.5vw, 2rem) 0 0; }
+.credits dl > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 2rem;
+  padding-block: 1rem;
+  border-top: 1px solid var(--rule);
+}
+.credits dl > div:last-child { border-bottom: 1px solid var(--rule); }
+.credits dt { flex: 0 0 clamp(10rem, 20vw, 16rem); }
+.credits dd { margin: 0; flex: 1 1 14rem; color: var(--ink-soft); }
+
 /* --------------------------------------------------------------------------
    10. Services
    -------------------------------------------------------------------------- */
