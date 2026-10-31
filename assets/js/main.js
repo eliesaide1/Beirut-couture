@@ -344,7 +344,7 @@
           form.classList.remove('was-validated');
         })
         .catch(function () {
-          say('Something interrupted the send. Please write to us directly at atelier@beirutcouture.com.');
+          say('Something interrupted the send. Please write to us directly at christinaiskandarr@gmail.com.');
         })
         .then(function () {
           if (submit) { submit.disabled = false; submit.textContent = label; }
