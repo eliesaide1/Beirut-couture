@@ -639,7 +639,6 @@ body.is-menu-open .drawer__nav a:nth-child(5) { transition-delay: 0.28s; }
 }
 .portraits .about--portrait { padding-top: clamp(2rem, 4vw, 3rem); border-top: 1px solid var(--rule); }
 .portraits .about--portrait + .about--portrait { margin-top: clamp(2rem, 4vw, 3rem); }
-.credits dd { line-height: 1.8; }
 .about__media .credits { margin-top: clamp(2.5rem, 5vw, 3.5rem); }
 
 /* Justified gallery: photographs of different shapes share a row at one
@@ -664,19 +663,17 @@ body.is-menu-open .drawer__nav a:nth-child(5) { transition-delay: 0.28s; }
   color: var(--ink);
 }
 
-/* Creative credits: a label and its value per line */
+/* Creative credits: one small running paragraph, no ruled rows */
 .credits { margin-top: clamp(3rem, 7vw, 5rem); }
-.credits dl { margin: clamp(1.25rem, 2.5vw, 2rem) 0 0; }
-.credits dl > div {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.25rem 2rem;
-  padding-block: 1rem;
-  border-top: 1px solid var(--rule);
+.credits__text {
+  margin: clamp(1rem, 2vw, 1.5rem) 0 0;
+  max-width: none;
+  font-size: 0.8125rem;
+  line-height: 1.9;
+  color: var(--ink-soft);
+  text-align: left;          /* the site justifies body copy; a credit run reads better ragged */
 }
-.credits dl > div:last-child { border-bottom: 1px solid var(--rule); }
-.credits dt { flex: 0 0 clamp(10rem, 20vw, 16rem); }
-.credits dd { margin: 0; flex: 1 1 14rem; color: var(--ink-soft); }
+.credits__role { color: var(--ink-faint); }
 
 /* --------------------------------------------------------------------------
    10. Services
