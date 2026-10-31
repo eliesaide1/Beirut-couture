@@ -597,6 +597,23 @@ body.is-menu-open .drawer__nav a:nth-child(5) { transition-delay: 0.28s; }
   .editorial__item { flex-basis: calc((100% - 4 * var(--gap)) / 5); }
 }
 
+/* One photograph on its own, shown far larger than it was in the five-up
+   strip. Centred, and capped so a 2:3 portrait cannot run away vertically —
+   at full shell width this image would be well over 2000px tall. The frame
+   keeps the picture's own ratio, so nothing is cropped. */
+.editorial--single { justify-content: center; }
+.editorial--single .editorial__item {
+  flex: 0 0 100%;
+  max-width: 55rem;
+}
+
+/* Wider and shorter than the photograph's own 2:3. The four women stand in
+   the lower half of the frame — heads about 57% down, hems almost at the
+   bottom edge — so the crop is pulled downwards. Centring it would take the
+   gowns off at the knee; what is given up instead is the upper balcony. */
+.editorial--single .figure__frame { aspect-ratio: 7 / 8; }
+.editorial--single .figure__frame img { object-position: center 85%; }
+
 .editorial__title {
   letter-spacing: 0.08em;
   margin-bottom: clamp(2rem, 5vw, 3.5rem);
