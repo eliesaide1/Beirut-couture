@@ -206,6 +206,63 @@
     });
   }
 
+  /* ---- Disclosure: a photograph that opens the piece beneath it --------- *
+   * The Banet Beirut group shot is the control for its own editorial: the
+   * text and the individual portraits stay closed until it is clicked. The
+   * panel uses the `hidden` attribute, so with JavaScript off it is simply
+   * open and everything reads as a normal page.
+   * ---------------------------------------------------------------------- */
+  var discControls = document.querySelectorAll('[data-disclosure]');
+
+  if (discControls.length) {
+    /* JS is running, so start closed. Without this the panel would be open
+       for the first paint and then snap shut, and readers with JS disabled
+       keep the whole piece. */
+    discControls.forEach(function (c) {
+      var panel = document.getElementById(c.getAttribute('data-disclosure'));
+      if (panel) panel.hidden = true;
+    });
+
+    var setDisclosure = function (id, open) {
+      var panel = document.getElementById(id);
+      if (!panel) return;
+      panel.hidden = !open;
+
+      document.querySelectorAll('[data-disclosure="' + id + '"]').forEach(function (c) {
+        if (c.hasAttribute('aria-expanded')) c.setAttribute('aria-expanded', String(open));
+        if (c.classList.contains('disclosure__hint')) {
+          c.textContent = open ? (c.dataset.labelOpen || 'Close')
+                               : (c.dataset.labelClosed || 'Read the editorial');
+        }
+      });
+
+      /* Scroll reveals inside the panel never intersected while it was
+         hidden; show them outright rather than wait for a scroll. */
+      if (open) {
+        panel.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('is-in'); });
+      }
+    };
+
+    var toggleFrom = function (control) {
+      var id = control.getAttribute('data-disclosure');
+      var panel = document.getElementById(id);
+      if (panel) setDisclosure(id, panel.hidden);
+    };
+
+    document.addEventListener('click', function (e) {
+      var c = e.target.closest('[data-disclosure]');
+      if (c) toggleFrom(c);
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key !== 'Enter' && e.key !== ' ') return;
+      var c = e.target.closest && e.target.closest('[data-disclosure][role="button"]');
+      if (!c) return;
+      e.preventDefault();
+      toggleFrom(c);
+    });
+  }
+
   /* ---- Lightbox --------------------------------------------------------- */
   var box = document.querySelector('.lightbox');
   if (box) {
@@ -369,7 +426,16 @@
         if (on && focus) t.focus();
       });
       panels.forEach(function (p) { p.hidden = p.id !== 'panel-' + id; });
-      photos.forEach(function (p) { p.classList.toggle('is-active', p.dataset.tabPhoto === id); });
+      photos.forEach(function (p) {
+        var on = p.dataset.tabPhoto === id;
+        p.classList.toggle('is-active', on);
+        /* Fine Jewelry is a film rather than a photograph: run it only while
+           its tab is open, so it is not decoding behind the other two. */
+        if (p.tagName === 'VIDEO') {
+          if (on) { var go = p.play(); if (go && go.catch) go.catch(function () {}); }
+          else { p.pause(); }
+        }
+      });
     };
 
     root.classList.add('is-ready');

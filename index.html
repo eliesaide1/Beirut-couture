@@ -22,7 +22,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Calibri:ital,wght@0,400;0,700;1,400;1,700&display=swap">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="assets/css/style.css?v=84">
+<link rel="stylesheet" href="assets/css/style.css?v=94">
 
 <script type="application/ld+json">
 {
@@ -129,9 +129,12 @@
       <div class="tabs reveal" data-tabs>
         <div class="tabs__media">
           <div class="figure__frame ratio-4x5">
-            <img class="tabs__photo is-active" data-tab-photo="bridal" src="assets/img/work-02.jpg" alt="Ivory lace gown worn on the slopes of the Lebanese mountains" width="1042" height="1280" decoding="async">
-            <img class="tabs__photo" data-tab-photo="couture" src="assets/img/service-couture.jpg" alt="Deep red gown with a long embroidered train" width="1072" height="1280" loading="lazy" decoding="async">
-            <img class="tabs__photo" data-tab-photo="jewelry" src="assets/img/service-jewelry.jpg" alt="Pendant with a carved stone set in gold, held in the hand" width="1068" height="1159" loading="lazy" decoding="async">
+            <img class="tabs__photo is-active" data-tab-photo="bridal" src="assets/img/concierge/bridal.jpg" alt="Ivory lace gown with chiffon roses at the neckline, worn with a pearl and gold necklace" width="1400" height="1960" decoding="async">
+            <img class="tabs__photo" data-tab-photo="couture" src="assets/img/concierge/couture.jpg" alt="Pale pink corseted gown in textured lace, held with a clear bag of candy floss" width="1400" height="2054" loading="lazy" decoding="async">
+            <video class="tabs__photo" data-tab-photo="jewelry" muted loop playsinline preload="none"
+                   poster="assets/img/concierge/jewelry-poster.jpg" aria-label="Fine jewelry film">
+              <source src="assets/video/jewelry.mp4" type="video/mp4">
+            </video>
           </div>
         </div>
         <div class="tabs__main">
@@ -345,16 +348,23 @@
   <section class="section" id="journal" style="padding-top:0">
     <div class="shell">
       <div class="section-head__meta reveal" style="margin-bottom:clamp(2rem,5vw,3.5rem)"><p class="label label--faint">Journal</p></div>
-      <h2 class="h-md editorial__title reveal">BANET BEIRUT x SARA MRAD EDITORIAL</h2>
+      <h2 class="h-md editorial__title editorial__title--toggle reveal"
+          data-disclosure="banet-detail" role="button" tabindex="0"
+          aria-expanded="false" aria-controls="banet-detail">BANET BEIRUT x SARA MRAD EDITORIAL</h2>
 
       <div class="editorial editorial--single">
         <figure class="figure editorial__item">
-          <div class="figure__frame ratio-tall" data-lightbox="Banet Beirut x Sara Mrad · Group" role="button" tabindex="0" aria-label="View larger: Banet Beirut x Sara Mrad · Group">
+          <div class="figure__frame ratio-tall" data-disclosure="banet-detail" role="button" tabindex="0"
+               aria-expanded="false" aria-controls="banet-detail"
+               aria-label="Read the Banet Beirut x Sara Mrad editorial">
             <img data-full="assets/img/hd/img-6286.jpg" src="assets/img/editorial/img-6286.jpg" alt="Four women in lilac, ivory and pale blue couture in front of a heritage house, Banet Beirut editorial" width="1400" height="2099" loading="lazy" decoding="async">
           </div>
+          <p class="disclosure__hint label" data-disclosure="banet-detail"
+             data-label-closed="Read the editorial" aria-hidden="true">Read the editorial</p>
         </figure>
       </div>
 
+      <div id="banet-detail" class="disclosure">
       <div class="body-copy body-copy--lg editorial__text reveal">
           <p>For Banet Beirut shoot, we brought together four Lebanese women whose lives and work reflect different expressions of this connection.</p>
           <p>Farah Dagher, co-founder of Origin Circle, returned from New York to create a space where wellness and community could meet in Beirut.</p>
@@ -443,6 +453,7 @@
         </div>
       </article>
       </div>
+      </div>
     </div>
   </section>
 
@@ -450,7 +461,9 @@
   <section class="section" id="maison-ali" style="padding-top:0">
     <div class="shell">
       <hr class="rule" style="margin-bottom:clamp(3rem,7vw,5rem)">
-      <h2 class="h-md editorial__title reveal">MAISON ALI FILM</h2>
+      <h2 class="h-md editorial__title editorial__title--toggle reveal"
+          data-disclosure="maison-ali-detail" role="button" tabindex="0"
+          aria-expanded="false" aria-controls="maison-ali-detail">MAISON ALI FILM</h2>
 
       <figure class="figure reveal">
         <div class="figure__frame" style="aspect-ratio:16/9">
@@ -460,8 +473,11 @@
             <source src="assets/video/maison-ali-film.mp4" type="video/mp4">
           </video>
         </div>
+        <p class="disclosure__hint label" data-disclosure="maison-ali-detail"
+           data-label-closed="Read about the film" aria-hidden="true">Read about the film</p>
       </figure>
 
+      <div id="maison-ali-detail" class="disclosure">
       <blockquote class="pullquote reveal" lang="ar" dir="rtl">لأنّه إذا ما اشتغلنا للبلد بأصعب أوقاته، ما منستاهلو بأحلى إيّامه</blockquote>
 
       <div class="body-copy body-copy--lg editorial__text reveal">
@@ -482,6 +498,84 @@
           <span class="credits__role">Equipment Rental</span> Axis Pro Films
         </p>
       </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Nayla Tueni x Rami Kadi -->
+  <section class="section" id="nayla" style="padding-top:0">
+    <div class="shell">
+      <hr class="rule" style="margin-bottom:clamp(3rem,7vw,5rem)">
+      <h2 class="h-md editorial__title editorial__title--toggle reveal"
+          data-disclosure="nayla-detail" role="button" tabindex="0"
+          aria-expanded="false" aria-controls="nayla-detail">NAYLA TUENI x RAMI KADI EDITORIAL</h2>
+
+      <div class="editorial editorial--single">
+        <figure class="figure editorial__item">
+<div class="figure__frame" style="aspect-ratio:1400/2100" data-lightbox="Nayla Tueni x Rami Kadi" role="button" tabindex="0" aria-label="View larger: Nayla Tueni x Rami Kadi">
+            <img data-full="assets/img/hd/nayla-02.jpg" src="assets/img/nayla/nayla-02.jpg" alt="A woman in a black gown seated among stacks of newspapers against a wood-panelled wall" width="1400" height="2100" loading="lazy" decoding="async">
+          </div>
+        </figure>
+      </div>
+
+      <p class="disclosure__hint label" data-disclosure="nayla-detail"
+         data-label-closed="Read the editorial" aria-hidden="true">Read the editorial</p>
+
+      <div id="nayla-detail" class="disclosure">
+        <div class="body-copy body-copy--lg editorial__text reveal">
+          <p>The rooster, a symbol of courage, stands as a fitting emblem for An-Nahar and the Tueni family's enduring place in Lebanese journalism. Founded in 1933, the newspaper has been part of Lebanon's public and cultural life for generations.</p>
+          <p>Today, Nayla Tueni continues this legacy, leading An-Nahar into a new chapter while preserving the principles that have shaped its history. Through her work, she brings a contemporary perspective to an institution whose story is deeply intertwined with that of Lebanon itself.</p>
+          <p>Her role extends beyond journalism. As a member of the advisory board of the F&eacute;d&eacute;ration Libanaise de la Mode, she also contributes to the continued development of Lebanon's fashion industry.</p>
+          <p>The memory of Gebran Tueni remains inseparable from this legacy. His voice and love for Lebanon endure through the work that continues in his name. In Nayla, that legacy finds a daughter carrying it forward with purpose, and integrity.</p>
+          <p>For Beirut Couture, this editorial was an opportunity to bring together different expressions of Lebanese creativity: couture, fine jewelry and the cultural influence of a woman whose work connects the country's past with its future.</p>
+        </div>
+
+      <div class="justified-gallery">
+        <div class="justified">
+          <figure class="figure justified__item" style="--r:0.667">
+            <div class="figure__frame" style="aspect-ratio:1400/2100" data-lightbox="Nayla Tueni x Rami Kadi" role="button" tabindex="0" aria-label="View larger: Nayla Tueni x Rami Kadi">
+              <img data-full="assets/img/hd/nayla-01.jpg" src="assets/img/nayla/nayla-01.jpg" alt="A woman in a sequinned tweed jacket resting her chin on her hand, with the city behind her" width="1400" height="2100" loading="lazy" decoding="async">
+            </div>
+          </figure>
+          <figure class="figure justified__item" style="--r:0.667">
+            <div class="figure__frame" style="aspect-ratio:1400/2100" data-lightbox="Nayla Tueni x Rami Kadi" role="button" tabindex="0" aria-label="View larger: Nayla Tueni x Rami Kadi">
+              <img data-full="assets/img/hd/nayla-03.jpg" src="assets/img/nayla/nayla-03.jpg" alt="A woman in black holding a ceramic rooster to her face" width="1400" height="2100" loading="lazy" decoding="async">
+            </div>
+          </figure>
+        </div>
+        <div class="justified">
+          <figure class="figure justified__item" style="--r:0.667">
+            <div class="figure__frame" style="aspect-ratio:1400/2100" data-lightbox="Nayla Tueni x Rami Kadi" role="button" tabindex="0" aria-label="View larger: Nayla Tueni x Rami Kadi">
+              <img data-full="assets/img/hd/nayla-04.jpg" src="assets/img/nayla/nayla-04.jpg" alt="A woman in a black off-the-shoulder gown holding a ceramic rooster and a silver clutch" width="1400" height="2100" loading="lazy" decoding="async">
+            </div>
+          </figure>
+          <figure class="figure justified__item" style="--r:0.667">
+            <div class="figure__frame" style="aspect-ratio:1400/2100" data-lightbox="Nayla Tueni x Rami Kadi" role="button" tabindex="0" aria-label="View larger: Nayla Tueni x Rami Kadi">
+              <img data-full="assets/img/hd/nayla-05.jpg" src="assets/img/nayla/nayla-05.jpg" alt="A woman in a silver-grey sparkling gown standing in front of a painted mural" width="1400" height="2100" loading="lazy" decoding="async">
+            </div>
+          </figure>
+          <figure class="figure justified__item" style="--r:0.667">
+            <div class="figure__frame" style="aspect-ratio:1400/2100" data-lightbox="Nayla Tueni x Rami Kadi" role="button" tabindex="0" aria-label="View larger: Nayla Tueni x Rami Kadi">
+              <img data-full="assets/img/hd/nayla-06.jpg" src="assets/img/nayla/nayla-06.jpg" alt="A woman in a grey gown at the end of a long office corridor" width="1400" height="2100" loading="lazy" decoding="async">
+            </div>
+          </figure>
+        </div>
+      </div>
+
+        <div class="credits reveal">
+          <h3 class="h-md">Creative Credits</h3>
+          <p class="credits__text">
+          <span class="credits__role">Couture</span> Rami Kadi &middot;
+          <span class="credits__role">Jewelry</span> Nada Ghazal &middot;
+          <span class="credits__role">Creative Support</span> Mowie Mood &middot;
+          <span class="credits__role">Photography</span> Flo Husseini and Gummy Studios &middot;
+          <span class="credits__role">Art Direction</span> Tara Asmar and Gummy Studios &middot;
+          <span class="credits__role">Styling</span> Jony Matta &middot;
+          <span class="credits__role">Makeup</span> Kevork Tavitian &middot;
+          <span class="credits__role">Hair</span> Pace e Luce
+          </p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -489,15 +583,36 @@
   <section class="section" id="memories" style="padding-top:0">
     <div class="shell">
       <hr class="rule" style="margin-bottom:clamp(3rem,7vw,5rem)">
-      <h2 class="h-md editorial__title reveal">LEBANESE MEMORIES x RAMI KADI EDITORIAL</h2>
+      <h2 class="h-md editorial__title editorial__title--toggle reveal"
+          data-disclosure="memories-detail" role="button" tabindex="0"
+          aria-expanded="false" aria-controls="memories-detail">LEBANESE MEMORIES x RAMI KADI EDITORIAL</h2>
+
+      <div class="editorial editorial--single">
+        <figure class="figure editorial__item">
+          <div class="figure__frame" style="aspect-ratio:1400/2099" data-lightbox="Lebanese Memories x Rami Kadi" role="button" tabindex="0" aria-label="View larger: Lebanese Memories x Rami Kadi">
+            <img data-full="assets/img/hd/memories-01.jpg" src="assets/img/memories/memories-01.jpg" alt="Three women in couture seated and lying among white drapery, a backgammon board in the foreground, black-and-white photographs behind them" width="1400" height="2099" loading="lazy" decoding="async">
+          </div>
+        </figure>
+      </div>
+
+      <p class="disclosure__hint label" data-disclosure="memories-detail"
+         data-label-closed="Read the editorial" aria-hidden="true">Read the editorial</p>
+
+      <div id="memories-detail" class="disclosure">
+      <div class="body-copy body-copy--lg editorial__text reveal">
+          <p>Dear Lebanon,</p>
+          <p>Every one of us carries a piece of your story. A story shaped by migration, by the memories we hold close and by our enduring love for a land that gave us so much, even when it could not promise us a future.</p>
+          <p>Wearing Rami Kadi's Spring/Summer 2025 Couture collection, Chaîne des Danses, we explored the contrasts that define the Lebanese experience: the distance between the lives we have built elsewhere and the childhoods, traditions and memories that continue to bring us home.</p>
+          <p>In the background, black-and-white imagery evokes the shadows of childhood during war, families separated by exile and the quiet exhaustion of building a life abroad.</p>
+          <p>In the foreground, colour brings us back to the memories that remain unmistakably ours: stringing daisy necklaces with the girls, playing Tawle with rules that were never quite followed, making cup telephones that barely worked, drinking Bonjus after a zaatar man'oushe and buying ghazl el banet from roadside vendors.</p>
+          <p>These ordinary moments are anything but ordinary. They are the small fragments of a shared childhood that become part of who we are wherever life takes us.</p>
+          <p>Some left because they had to. Others stayed, not because it was easy but because they could not imagine letting go.</p>
+          <p>This editorial is a love letter to the Lebanon we carry within us: a reminder that our connection to this land lives in our memories, our people, and our determination to keep creating here.</p>
+          <p>May Lebanon rise again through the hands of those who continue to believe in it, build within it and refuse to let it go.</p>
+      </div>
 
       <div class="justified-gallery">
         <div class="justified">
-          <figure class="figure justified__item" style="--r:0.667">
-            <div class="figure__frame" style="aspect-ratio:1400/2099" data-lightbox="Lebanese Memories x Rami Kadi" role="button" tabindex="0" aria-label="View larger: Lebanese Memories x Rami Kadi">
-              <img data-full="assets/img/hd/memories-01.jpg" src="assets/img/memories/memories-01.jpg" alt="Three women in couture seated and lying among white drapery, a backgammon board in the foreground, black-and-white photographs behind them" width="1400" height="2099" loading="lazy" decoding="async">
-            </div>
-          </figure>
           <figure class="figure justified__item" style="--r:0.75">
             <div class="figure__frame" style="aspect-ratio:1400/1868" data-lightbox="Lebanese Memories x Rami Kadi" role="button" tabindex="0" aria-label="View larger: Lebanese Memories x Rami Kadi">
               <img data-full="assets/img/hd/memories-02.jpg" src="assets/img/memories/memories-02.jpg" alt="Two women in couture standing, one holding a paper cup to her ear, in front of a black-and-white photograph" width="1400" height="1868" loading="lazy" decoding="async">
@@ -516,52 +631,6 @@
             </div>
           </figure>
         </div>
-        <div class="justified">
-          <figure class="figure justified__item" style="--r:0.667">
-            <div class="figure__frame" style="aspect-ratio:1400/2100" data-lightbox="Lebanese Memories x Rami Kadi" role="button" tabindex="0" aria-label="View larger: Lebanese Memories x Rami Kadi">
-              <img data-full="assets/img/hd/nayla-01.jpg" src="assets/img/nayla/nayla-01.jpg" alt="A woman in a sequinned tweed jacket resting her chin on her hand, with the city behind her" width="1400" height="2100" loading="lazy" decoding="async">
-            </div>
-          </figure>
-          <figure class="figure justified__item" style="--r:0.667">
-            <div class="figure__frame" style="aspect-ratio:1400/2100" data-lightbox="Lebanese Memories x Rami Kadi" role="button" tabindex="0" aria-label="View larger: Lebanese Memories x Rami Kadi">
-              <img data-full="assets/img/hd/nayla-02.jpg" src="assets/img/nayla/nayla-02.jpg" alt="A woman in a black gown seated among stacks of newspapers against a wood-panelled wall" width="1400" height="2100" loading="lazy" decoding="async">
-            </div>
-          </figure>
-          <figure class="figure justified__item" style="--r:0.667">
-            <div class="figure__frame" style="aspect-ratio:1400/2100" data-lightbox="Lebanese Memories x Rami Kadi" role="button" tabindex="0" aria-label="View larger: Lebanese Memories x Rami Kadi">
-              <img data-full="assets/img/hd/nayla-03.jpg" src="assets/img/nayla/nayla-03.jpg" alt="A woman in black holding a ceramic rooster to her face" width="1400" height="2100" loading="lazy" decoding="async">
-            </div>
-          </figure>
-        </div>
-        <div class="justified">
-          <figure class="figure justified__item" style="--r:0.667">
-            <div class="figure__frame" style="aspect-ratio:1400/2100" data-lightbox="Lebanese Memories x Rami Kadi" role="button" tabindex="0" aria-label="View larger: Lebanese Memories x Rami Kadi">
-              <img data-full="assets/img/hd/nayla-04.jpg" src="assets/img/nayla/nayla-04.jpg" alt="A woman in a black off-the-shoulder gown holding a ceramic rooster and a silver clutch" width="1400" height="2100" loading="lazy" decoding="async">
-            </div>
-          </figure>
-          <figure class="figure justified__item" style="--r:0.667">
-            <div class="figure__frame" style="aspect-ratio:1400/2100" data-lightbox="Lebanese Memories x Rami Kadi" role="button" tabindex="0" aria-label="View larger: Lebanese Memories x Rami Kadi">
-              <img data-full="assets/img/hd/nayla-05.jpg" src="assets/img/nayla/nayla-05.jpg" alt="A woman in a silver-grey sparkling gown standing in front of a painted mural" width="1400" height="2100" loading="lazy" decoding="async">
-            </div>
-          </figure>
-          <figure class="figure justified__item" style="--r:0.667">
-            <div class="figure__frame" style="aspect-ratio:1400/2100" data-lightbox="Lebanese Memories x Rami Kadi" role="button" tabindex="0" aria-label="View larger: Lebanese Memories x Rami Kadi">
-              <img data-full="assets/img/hd/nayla-06.jpg" src="assets/img/nayla/nayla-06.jpg" alt="A woman in a grey gown at the end of a long office corridor" width="1400" height="2100" loading="lazy" decoding="async">
-            </div>
-          </figure>
-        </div>
-      </div>
-
-      <div class="body-copy body-copy--lg editorial__text reveal">
-          <p>Dear Lebanon,</p>
-          <p>Every one of us carries a piece of your story. A story shaped by migration, by the memories we hold close and by our enduring love for a land that gave us so much, even when it could not promise us a future.</p>
-          <p>Wearing Rami Kadi's Spring/Summer 2025 Couture collection, Chaîne des Danses, we explored the contrasts that define the Lebanese experience: the distance between the lives we have built elsewhere and the childhoods, traditions and memories that continue to bring us home.</p>
-          <p>In the background, black-and-white imagery evokes the shadows of childhood during war, families separated by exile and the quiet exhaustion of building a life abroad.</p>
-          <p>In the foreground, colour brings us back to the memories that remain unmistakably ours: stringing daisy necklaces with the girls, playing Tawle with rules that were never quite followed, making cup telephones that barely worked, drinking Bonjus after a zaatar man'oushe and buying ghazl el banet from roadside vendors.</p>
-          <p>These ordinary moments are anything but ordinary. They are the small fragments of a shared childhood that become part of who we are wherever life takes us.</p>
-          <p>Some left because they had to. Others stayed, not because it was easy but because they could not imagine letting go.</p>
-          <p>This editorial is a love letter to the Lebanon we carry within us: a reminder that our connection to this land lives in our memories, our people, and our determination to keep creating here.</p>
-          <p>May Lebanon rise again through the hands of those who continue to believe in it, build within it and refuse to let it go.</p>
       </div>
 
       <div class="credits reveal">
@@ -573,6 +642,7 @@
           <span class="credits__role">Featured Models</span> Sarah Dagher, Vanessa Azizi and Christina Iskandar
         </p>
       </div>
+      </div>
     </div>
   </section>
 
@@ -580,24 +650,31 @@
   <section class="section" id="muses" style="padding-top:0">
     <div class="shell">
       <hr class="rule" style="margin-bottom:clamp(3rem,7vw,5rem)">
-      <h2 class="h-md editorial__title reveal">BEIRUT COUTURE MUSES EDITORIAL</h2>
+      <h2 class="h-md editorial__title editorial__title--toggle reveal"
+          data-disclosure="muses-detail" role="button" tabindex="0"
+          aria-expanded="false" aria-controls="muses-detail">BEIRUT COUTURE MUSES EDITORIAL</h2>
 
-      <div class="about">
-        <div class="about__text reveal" data-delay="1">
-          <div class="body-copy body-copy--lg">
+      <div class="editorial editorial--single">
+        <figure class="figure editorial__item">
+          <div class="figure__frame ratio-square" data-disclosure="muses-detail" role="button" tabindex="0"
+               aria-expanded="false" aria-controls="muses-detail"
+               aria-label="Read the Beirut Couture Muses editorial">
+            <img data-full="assets/img/hd/muses-group.jpg" src="assets/img/muses/muses-group.jpg" alt="Seven women in couture gathered in a white panelled room, some seated, some standing" width="1400" height="1400" loading="lazy" decoding="async">
+          </div>
+          <p class="disclosure__hint label" data-disclosure="muses-detail"
+             data-label-closed="Read the editorial" aria-hidden="true">Read the editorial</p>
+        </figure>
+      </div>
+
+      <div id="muses-detail" class="disclosure">
+        <div class="body-copy body-copy--lg editorial__text reveal">
             <p>Our muses are women who carry Lebanese culture with grace and purpose. Mothers, founders, artists and daughters whose work, values and everyday contributions continue to shape the country around them.</p>
             <p>For this Beirut Couture editorial, we brought together four women we deeply admire. Each has built a life and career of her own, guided by a commitment to her work, her family and the values she holds close. They are women who may not seek the spotlight, yet leave a lasting mark on the people and communities around them.</p>
             <p>From left to right, Carla Chamoun, the Lebanese singer whose voice has reached the stage of Hans Zimmer; Salwa Chalhoub, founder of Opera Gallery Beirut, who brings people and cultures together through art; Marijo Samneh, founder of Corporate Code, whose work centers on legal and compliance services; and Lilia Sabbagh, founder and managing partner of Sabbagh Law Firm, whose professional achievements are matched by her commitment to mentoring and advocacy.</p>
             <p>Together, they represent a form of elegance that extends beyond appearance: one shaped by substance, integrity and presence.</p>
             <p>The editorial also celebrates the artistry of Lebanese couture, featuring designs by Abbas Harajli, Gemy Maalouf, Harithand, Hassidriss and Jean Pierre Khoury. Their creations reflect the depth and diversity of a fashion culture that has long been part of Lebanon's identity.</p>
-          </div>
         </div>
-        <div class="about__media reveal" data-delay="1">
-        <figure class="figure reveal">
-          <div class="figure__frame ratio-square" data-lightbox="Beirut Couture Muses" role="button" tabindex="0" aria-label="View larger: Beirut Couture Muses">
-            <img data-full="assets/img/hd/muses-group.jpg" src="assets/img/muses/muses-group.jpg" alt="Seven women in couture gathered in a white panelled room, some seated, some standing" width="1400" height="1400" loading="lazy" decoding="async">
-          </div>
-        </figure>
+
           <div class="credits reveal">
           <h3 class="h-md">Creative Credits</h3>
           <p class="credits__text">
@@ -610,8 +687,6 @@
             <span class="credits__role">Additional Designer Credit</span> Jean Pierre Khoury worn by Sveta Chehabeddine
           </p>
         </div>
-        </div>
-      </div>
 
       <div class="portraits">
         <h3 class="h-md portraits__title reveal">Individual Portraits</h3>
@@ -690,6 +765,24 @@
         </div>
       </article>
       </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Partnerships & Sponsorships -->
+  <section class="section" id="partnerships" style="padding-top:0">
+    <div class="shell">
+      <hr class="rule" style="margin-bottom:clamp(3rem,7vw,5rem)">
+      <h2 class="h-md editorial__title reveal">PARTNERSHIPS &amp; SPONSORSHIPS</h2>
+
+      <div class="body-copy body-copy--lg editorial__text reveal">
+        <p>Beirut Couture welcomes partnerships and sponsorships with brands, corporations, institutions and individuals who share our vision of supporting and advancing Lebanese couture, pr&ecirc;t-&agrave;-porter and fine jewelry.</p>
+        <p>For partnership, sponsorship and collaboration inquiries, please get in touch.</p>
+      </div>
+
+      <p class="reveal" style="margin-top:clamp(2rem,4vw,3rem)">
+        <a class="btn label" href="mailto:christinaiskandarr@gmail.com?subject=Partnership%20and%20sponsorship%20enquiry">Get in Touch</a>
+      </p>
     </div>
   </section>
 
@@ -737,6 +830,6 @@
   </div>
 </footer>
 
-<script src="assets/js/main.js?v=84" defer></script>
+<script src="assets/js/main.js?v=94" defer></script>
 </body>
 </html>

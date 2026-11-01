@@ -616,8 +616,35 @@ body.is-menu-open .drawer__nav a:nth-child(5) { transition-delay: 0.28s; }
    the lower half of the frame — heads about 57% down, hems almost at the
    bottom edge — so the crop is pulled downwards. Centring it would take the
    gowns off at the knee; what is given up instead is the upper balcony. */
-.editorial--single .figure__frame { aspect-ratio: 7 / 8; }
-.editorial--single .figure__frame img { object-position: center 85%; }
+#journal .editorial--single .figure__frame { aspect-ratio: 7 / 8; }
+#journal .editorial--single .figure__frame img { object-position: center 85%; }
+
+/* The group photograph is the control for its own editorial, so it has to
+   look pressable and carry a visible hint — without one, nothing suggests
+   the piece is behind it. */
+.editorial--single .figure { text-align: center; }
+.editorial--single .figure__frame { cursor: pointer; }
+
+.disclosure__hint {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.55rem;
+  margin: 1.1rem 0 0;
+  cursor: pointer;
+  color: var(--ink-faint);
+  transition: color var(--mid) var(--ease);
+}
+.disclosure__hint::after { content: "+"; }
+.disclosure__hint:hover { color: var(--ink); }
+[aria-expanded="true"] ~ .disclosure__hint { color: var(--ink); }
+[aria-expanded="true"] ~ .disclosure__hint::after { content: "\2013"; }
+
+.disclosure { margin-top: clamp(2.5rem, 6vw, 4.5rem); }
+.disclosure .justified-gallery { margin-top: clamp(2.5rem, 6vw, 4rem); }
+
+/* The editorial heading opens the piece as well as the photograph does */
+.editorial__title--toggle { cursor: pointer; transition: color var(--mid) var(--ease); }
+.editorial__title--toggle:hover { color: var(--ink-faint); }
 
 .editorial__title {
   letter-spacing: 0.08em;
