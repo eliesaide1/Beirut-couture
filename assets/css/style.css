@@ -625,19 +625,26 @@ body.is-menu-open .drawer__nav a:nth-child(5) { transition-delay: 0.28s; }
 .editorial--single .figure { text-align: center; }
 .editorial--single .figure__frame { cursor: pointer; }
 
+/* Always directly under the media and centred, whatever it is nested in —
+   `margin-inline: auto` on a fit-content box rather than relying on the
+   parent's text-align, which only existed on the editorial--single figures.
+   The open state is a class set by main.js, not a sibling selector: the
+   hint under the Maison Ali film sits inside the figure, out of reach of
+   any `~` from the heading that controls it. */
 .disclosure__hint {
-  display: inline-flex;
+  display: flex;
+  width: fit-content;
   align-items: baseline;
   gap: 0.55rem;
-  margin: 1.1rem 0 0;
+  margin: 1.1rem auto 0;
   cursor: pointer;
   color: var(--ink-faint);
   transition: color var(--mid) var(--ease);
 }
 .disclosure__hint::after { content: "+"; }
-.disclosure__hint:hover { color: var(--ink); }
-[aria-expanded="true"] ~ .disclosure__hint { color: var(--ink); }
-[aria-expanded="true"] ~ .disclosure__hint::after { content: "\2013"; }
+.disclosure__hint:hover,
+.disclosure__hint.is-open { color: var(--ink); }
+.disclosure__hint.is-open::after { content: "\2013"; }
 
 .disclosure { margin-top: clamp(2.5rem, 6vw, 4.5rem); }
 .disclosure .justified-gallery { margin-top: clamp(2.5rem, 6vw, 4rem); }

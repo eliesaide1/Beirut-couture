@@ -231,6 +231,7 @@
       document.querySelectorAll('[data-disclosure="' + id + '"]').forEach(function (c) {
         if (c.hasAttribute('aria-expanded')) c.setAttribute('aria-expanded', String(open));
         if (c.classList.contains('disclosure__hint')) {
+          c.classList.toggle('is-open', open);
           c.textContent = open ? (c.dataset.labelOpen || 'Close')
                                : (c.dataset.labelClosed || 'Read the editorial');
         }
