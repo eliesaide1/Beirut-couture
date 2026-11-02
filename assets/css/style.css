@@ -725,6 +725,12 @@ body.is-menu-open .drawer__nav a:nth-child(5) { transition-delay: 0.28s; }
 
 /* Creative credits: one small running paragraph, no ruled rows */
 .credits { margin-top: clamp(3rem, 7vw, 5rem); }
+.credits > h3 {
+  font-family: var(--sans);
+  font-size: 0.8125rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
 .credits__text {
   margin: clamp(1rem, 2vw, 1.5rem) 0 0;
   max-width: none;
