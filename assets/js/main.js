@@ -273,9 +273,12 @@
     var sources = [];
     var index   = 0;
 
-    var collect = function () {
+    /* Step only through the photographs of the section that was opened, so
+       Next in an editorial never wanders into the founder portrait. */
+    var collect = function (from) {
+      var scope = (from && from.closest('section')) || document;
       sources = Array.prototype.slice
-        .call(document.querySelectorAll('[data-lightbox]'))
+        .call(scope.querySelectorAll('[data-lightbox]'))
         .filter(function (el) { return !el.closest('[hidden]'); });
     };
 
@@ -295,7 +298,7 @@
     };
 
     var open = function (el) {
-      collect();
+      collect(el);
       index = sources.indexOf(el);
       if (index < 0) index = 0;
       render();
