@@ -179,7 +179,11 @@ h1, h2, h3, h4 {
 /* Journal: a long editorial read, so its paragraphs sit at half the gap
    used elsewhere — the text block is tighter without the lines themselves
    closing up. Covers the Banet Beirut piece and the Individual Portraits. */
-#journal .body-copy p + p { margin-top: 0.7em; }
+#journal .body-copy p + p,
+#maison-ali .body-copy p + p,
+#nayla .body-copy p + p,
+#memories .body-copy p + p,
+#muses .body-copy p + p { margin-top: 0.7em; }
 
 /* The About anchor lands on its label, not on the section's empty top padding */
 #about { scroll-margin-top: calc(-1 * var(--section)); }
