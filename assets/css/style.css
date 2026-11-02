@@ -893,7 +893,7 @@ body.is-menu-open .drawer__nav a:nth-child(5) { transition-delay: 0.28s; }
 }
 
 @media (min-width: 48rem) {
-  .footer__grid { grid-template-columns: 4fr 3fr 3fr 3fr; }
+  .footer__grid { grid-template-columns: 4fr 3fr 3fr; }
 }
 
 .footer__col { display: grid; gap: 1.1rem; align-content: start; }
