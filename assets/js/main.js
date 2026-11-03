@@ -405,7 +405,7 @@
           form.classList.remove('was-validated');
         })
         .catch(function () {
-          say('Something interrupted the send. Please write to us directly at christinaiskandarr@gmail.com.');
+          say('Something interrupted the send. Please write to us directly at info@beirut-couture.com.');
         })
         .then(function () {
           if (submit) { submit.disabled = false; submit.textContent = label; }
